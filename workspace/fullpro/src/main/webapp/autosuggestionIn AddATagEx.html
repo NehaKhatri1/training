@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #tags{
+  float:left;
+  border:1px solid #ccc;
+  padding:5px;
+  font-family:Arial;
+}
+#tags > span{
+  cursor:pointer;
+  display:block;
+  float:left;
+  color:#fff;
+  background:#789;
+  padding:5px;
+  padding-right:25px;
+  margin:4px;
+}
+#tags > span:hover{
+  opacity:0.7;
+}
+#tags > span:after{
+ position:absolute;
+ content:"×";
+ border:1px solid;
+ padding:2px 5px;
+ margin-left:3px;
+ font-size:11px;
+}
+#tags > input{
+  background:#eee;
+  border:0;
+  margin:4px;
+  padding:7px;
+  width:auto;
+}
+
+#SignUpButtonId{
+  width:50px;
+  height:50px;
+ 
+}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Autocomplete - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset=utf-8 />
+  <script type="text/javascript">
+var Text="";
+//var spanText="";
+
+$( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags input" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
+    $(document).ready(function(){
+
+$(function(){ // DOM ready
+
+  // ::: TAGS BOX
+  
+  $("#tags input").on({
+    focusout : function() {
+      var txt= this.value.replace(/[^a-z0-9\+\-\.\#]/ig,''); // allowed characters
+      if(txt) $("<span/>",{text:txt.toLowerCase(), insertBefore:this});
+      this.value="";
+    },
+    keyup : function(ev) {
+      // if: comma|enter (delimit more keyCodes with | pipe)
+      if(/(188|13)/.test(ev.which)) $(this).focusout(); 
+    }
+  });
+  $('#tags').on('click', 'span', function() {
+    if(confirm("Remove "+ $(this).text() +"?")) $(this).remove(); 
+  });
+
+
+
+});
+ 
+ $("#SignUpButtonId").click(function(){
+  //alert("");
+
+ // var x=document.getElementById("tags").value; //=$(this).text();
+//alert("x is"+x);  
+
+/*
+var container=document.getElementById('tags');
+var spanArray=container.getElementsByTagName('span');
+for(var s=0;s<spanArray.length;s++){
+  spanText=spanArray[s].innerHTML;
+  alert("spanText is"+spanText);
+}
+*/
+
+var container=document.getElementById('tags');
+var spanArray=container.getElementsByTagName('span');
+
+//alert("spanArray is "+spanArray.innerHTML);
+var comma=",";
+//var Text="";
+for(var s=0;s<spanArray.length;s++){
+ var spanText=spanArray[s].innerHTML+comma;
+  //Text=spanText+comma;
+ Text=Text+spanText;
+ 
+}
+
+  alert("Text is "+Text);
+
+
+});  // fun signup ending here.
+
+  
+});  //document.ready closed here.
+</script>
+</head>
+<body>
+
+
+  <div id="tags">
+   
+    <input type="text" value="" placeholder="Add subject(s) " />
+  </div>
+ <button class="button" id="SignUpButtonId" > Go </button>
+  
+
+ 
+
+
+
+
+</body>
+</html>

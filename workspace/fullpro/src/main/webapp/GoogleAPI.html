@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+    /* Google */
+.loginBtn--google {
+  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+  background: #DD4B39;
+}
+.loginBtn--google:before {
+  border-right: #BB3F30 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+  background: #E74B37;
+}
+
+
+  </style>
+  
+
+  <script src="https://apis.google.com/js/client:platform.js" async defer>
+   </script>
+
+<!-- Replace client id with your platform's ID either localhost or prod env. -->
+  <meta name="google-signin-client_id" content="227461716801-0sl37t39981tu3fge0ars4kc3q3527tl.apps.googleusercontent.com">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+
+
+
+
+  function onSignIn(googleUser) {
+
+ // alert("inside onSignIn method ");
+  var profile = googleUser.getBasicProfile();
+  //console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  //console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+ // console.log('gender: ' + profile.getGender());
+  //alert(" gmailid is "+profile.getId());   */
+
+  gapi.auth2.getAuthInstance().disconnect().then(function () {
+
+        //Do stuff here after the user has been signed out, you can still authenticate the token with Google on the server side
+
+    //alert("diconnected if already connected.");
+  /*  var profile = googleUser.getBasicProfile();
+   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  console.log('password: ' + profile.getPassword()); */
+ //alert(" gmailid is "+profile.getEmail());  
+
+var googleEmailid=profile.getEmail();
+var googleUserName=profile.getName();
+
+ if (googleEmailid!=null){
+    try{ 
+             //alert("In TRy BLOCK window.location is"+window.location);
+          
+
+//var googleUserInfo=googleUserName+":"+googleEmailid;
+//alert("userInformation no 3  : "+userInformation); 
+
+
+jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/register/googleUserDetails/"+googleEmailid+"/"+googleUserName,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                        //alert("*** google data is****"+data+"****status is ****"+status);                        //}
+                         
+                       }
+
+  }); // closure for ajax call
+
+
+       
+
+      window.location.replace("http://localhost:8080/portal1/HomePage.html?userName="+googleEmailid); 
+                     
+                    }
+                    catch(event) { 
+                          
+                      window.location = "http://localhost:8080/portal1/LoginPage.html"; 
+                     //  alert("Error in login with Google.Pls enter credentials in the fields.");
+                    }
+                  }
+
+    });
+
+}
+
+
+    $(document).ready(function(){
+
+
+      
+
+    
+});  //document.ready closed here.
+</script>
+</head>
+<body>
+
+
+  <div style="top:27%;left:43%;right:40%;bottom:60%;position:absolute;z-index:10;">
+ 
+
+  <!-- starting google button -->
+ <div><button  class="g-signin2"  data-onsuccess="onSignIn" data-width="170px" data-height="30px" data-longtitle="true" data-background-color="red" data-font-size="22" style="color: #e7663f" ></button></div> &nbsp&nbsp&nbsp&nbsp  
+ <!-- ending google button -->
+
+
+
+
+
+</body>
+</html>

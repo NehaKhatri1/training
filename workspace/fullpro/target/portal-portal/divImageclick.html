@@ -1,0 +1,183 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <style>
+   img.settings {
+ height: 100px;
+ width: 100px;
+}
+div.settings1 {
+   /* position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 100%;
+    bottom: 0px;   
+    background-color:; */
+   } 
+   img.settings:focus + div.settings1 {
+    left:50%;
+    right: 100%;
+   }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+function someFunction(abc,obj) {
+ alert(abc);
+      //alert($(obj).attr('class'));
+     
+      
+if(abc=='Secondary'){
+
+ alert("functionality not supported.");
+ /* $("#MutlipleSubjectSelectionDiv").hide();
+ // $("#StreamDiplomaCertificationDiv").show();
+   $("#StreamDiplomaCertificationDivBackButton").click(function(){
+
+       $("#MutlipleSubjectSelectionDiv").show();
+       $("#StreamDiplomaCertificationDiv").hide();
+      });  */
+
+} 
+      
+ else if(abc=='SeniorSecondary'|| abc=='Graduation'||abc=='PostGraduation'){
+   $("#MutlipleSubjectSelectionDiv").hide();
+  $("#DegreeDeplomaCertificationDiv").show();
+
+  $("#DegreeDeplomaCertificationDivBackButton").click(function(){
+
+       $("#MutlipleSubjectSelectionDiv").show();
+       $("#DegreeDeplomaCertificationDiv").hide();
+      });
+    var interest=abc; 
+
+  alert("Your interest is "+interest);
+//alert("flute is"+flute);
+//$(".settings1").click("slow",someAnotherFunction(xyz)) {
+ // alert(xyz);
+//});
+//alert("jija is"+jija);
+ 
+//return xyz;
+//}
+
+/*
+$(".settings1").click(function(){
+ alert(".settings1 clicked");
+    var x=$("#MutlipleSubjectSelectionDiv").hide("slow", someAnotherFunction());
+     alert("x is"+x);
+   var x1 = $("#x").val();           
+     
+    alert("x1 is"+x1); 
+     //{
+       // alert("function called spiritual india");
+    //});
+});  */
+
+$('.settings1').on('click', function() {
+       //do something
+       var x=someAnotherFunction();
+
+       alert("narkandi x is"+x);
+    });
+  //var course=document.getElementById("DegreeDeplomaCertificationDiv").innerHTML =xyz;
+  //var interest=abc;
+ // var course=someAnotherFunction(xyz,obj);
+  //alert("Your interest is "+interest);
+  //alert(" you selected course"+course);
+
+/*
+var classname = document.getElementsByClassName("settings");
+ alert("classname "+classname);
+ alert("classname.length "+classname.length);
+for (var i = 1; i < classname.length; i++) {
+  alert("under if ");
+  classname[i].addEventListener('click', someAnotherFunction(xyz,obj), false);
+  //alert("class stackoverflow");
+
+ }
+*/
+//  document.getElementById("DegreeDeplomaCertificationDiv").innerHTML;
+//function someAnotherFunction(xyz,obj) {
+  //    alert(xyz);
+   
+ } //Else If ends.
+
+else  {
+      alert("functionality not written yet.")
+}
+
+
+//document.getElementById("DegreeDeplomaCertificationDiv").innerHTML;
+  //    function someAnotherFunction(xyz,obj) {
+    //   alert(xyz);
+      //alert($(obj).attr('class'));
+
+     }
+
+  $(document).ready(function(){
+//$(".settings1").hide();
+// $("#DegreeDeplomaCertificationDiv").show();
+  });
+</script>
+</head>
+<body>
+
+
+  
+
+ <div id="MutlipleSubjectSelectionDiv"
+                               style="top:20%;left:0%;right:0%;bottom:0%; position: absolute;z-index:25; background-color:teal;border-style:none;display:solid;text-align:center;opacity:0.6;
+                               filter:alpha(opacity=60);">
+                               <font size="4" color="black" font-family="cursive" >
+
+
+                                <br> 
+                                <strong>Select Your Interest></span></br>  
+                                 <img class="settings" id=3CoursesProgram src="css/Secondary.jpg"  onclick="someFunction('Secondary',this)" tabindex="-1" alt="Secondary" />
+                               <!--  <div class="settings1"></div> -->
+
+                                 <img class="settings" id=3CoursesProgram   src="css/seniorSecondary.png" onclick="someFunction('SeniorSecondary',this)" tabindex="-1" alt="Senior_Secondary" />
+                                 <img class="settings" id=3CoursesProgram value=Graduation src="css/Graduation.jpg"  onclick="someFunction('Graduation',this)" tabindex="-1" alt="Graduation" />
+                                 <img class="settings" id=3CoursesProgram value=PostGraduation src="css/postGraduation.jpg"  onclick="someFunction('PostGraduation',this)" tabindex="-1" alt="Post_Graduation" />
+                                 <img class="settings" id=3CoursesProgram value=Doctorate src="css/Doctorate.png"  onclick="someFunction('Doctorate',this)" tabindex="-1" alt="Doctorate" />
+
+
+                               <!-- <div class="settings" id="DegreeDeplomaCertificationDiv" style="top:20%;left:0%;right:0%;bottom:0%; position: absolute;z-index:25; background-color:teal;border-style:none;display:solid;text-align:center;">
+                              </div>  -->
+                             </div>  <!-- Ending MutlipleSubjectSelectionDiv Here.   -->
+
+                             <!--<div class="result"></div> -->  
+                             <div class="settings1"  id="DegreeDeplomaCertificationDiv" style="top:20%;left:0%;right:0%;bottom:0%; position: absolute;z-index:23; background-color:red;border-style:none;display:solid;text-align:center;">
+                              <img class="settings1" id=degree src="css/Degree.png" onclick="someAnotherFunction('Degree')" tabindex="-1" alt="Degree" />
+                              <img class="settings1" id=diploma src="css/diploma.jpg" onclick="someAnotherFunction('Diploma')"  tabindex="-1" alt="Diploma" />
+                              <img class="settings1" id=certification src="css/certifications.png" onclick="someAnotherFunction('Certification')"  tabindex="-1" alt="Certification" /> 
+                              <button title="Back" class="fa fa-chevron-circle-left" id="DegreeDeplomaCertificationDivBackButton" style="font-size:25px;color:teal"
+                              ><i class="material-icons"></i></button></pre>
+
+                             </div>       
+
+                            <!-- <div class="settings2"  id="StreamDiplomaCertificationDiv" style="top:20%;left:0%;right:0%;bottom:0%; position: absolute;z-index:24; background-color:red;border-style:none;display:solid;text-align:center;">
+                             <img class="settings2" id=Stream src="css/Stream.jpg" onclick="someAnotherFunction('Stream',this)"  tabindex="-1" alt="Stream" /> 
+                              <img class="settings2" id=degree src="css/Degree.png" onclick="someAnotherFunction('Degree',this)" tabindex="-1" alt="Degree" />
+                              <img class="settings2" id=diploma src="css/diploma.jpg" onclick="someAnotherFunction('Diploma',this)"  tabindex="-1" alt="Diploma" />
+                             <button title="Back" class="fa fa-chevron-circle-left" id="StreamDiplomaCertificationDivBackButton" style="font-size:25px;color:teal"
+                              ><i class="material-icons"></i></button></pre>
+
+                             </div>    -->                        
+
+                             <div class="settings1"  id="ListOfCoursesInDegDipCertDiv" style="top:20%;left:0%;right:0%;bottom:0%; position: absolute;z-index:22; background-color:pink;border-style:none;display:solid;text-align:center;">
+                              <button title="Back"  class="fa fa-chevron-circle-left" id="ListOfCoursesInDegDipCertDivBackButton"><i class="material-icons" style="font-size:25px;color:teal"></i></button></pre>
+
+                             </div> 
+
+
+
+
+
+
+
+
+</body>
+</html>
+

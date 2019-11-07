@@ -1,0 +1,2280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!--<link rel="shortcut icon" type="image/x-icon" href="faviconboard.ico" />  -->
+  <link rel="icon" type="image/x-icon" href="css/favicon.ico"> 
+  <!--<script src="https://apis.google.com/js/platform.js" async defer></script> -->
+  
+   <script src="https://apis.google.com/js/client:platform.js" async defer>
+   </script>
+
+  <meta name="google-signin-client_id" content="67232620970-q3gpeg08dlfstvojj4fmsi6jo3of20vm.apps.googleusercontent.com">
+
+
+
+  <!--  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pinyon+Script" /> -->
+  <style>
+
+    .notes {
+      background-attachment: local;
+      background-image:
+      linear-gradient(to right, white 10px, transparent 10px),
+      linear-gradient(to left, white 10px, transparent 10px),
+      repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+      line-height: 31px;
+      padding: 8px 10px;
+    }
+    .buttonForBooks{
+      background-color: green; /* Green */
+      border: none;
+      color: white;
+      padding: 7px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 9px;
+      border-radius:5px;
+    }
+    .buttonCloseBook {
+      background-color: green; 
+      border: none;
+      color: white;
+      padding: 12px 26px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      border-radius:5px;
+    }
+    .buttonSignUp{
+      background-color:#ffffff ; /* Dark Brown */
+      border: none;
+      color: black;
+      padding: 7px 16px;
+      text-align: center;
+      text-decoration:none;
+      display: inline-block;
+      font-size: 10px;
+      border-radius:5px;
+    }
+
+    .buttonSignUp:hover {
+    background-color: #696969;
+    color: white;
+}
+
+    .buttonLogin{
+      background-color:white ; /* Dark Brown */
+      border: none; 
+      color: black;
+      padding: 7px 16px;
+      text-align: center;
+      text-decoration:none;
+      display: inline-block;
+      font-size: 10px;
+      border-radius:5px;
+      min-width: 50px;  /* add this if you want */
+      max-width: 100px; 
+       }
+      
+       .buttonLogin:hover {
+    background-color: #696969;
+    color: white;
+}
+
+/*
+select#Category option[value="Tutor"]   { background-image:url("css/AnimatedTeacher.gif");   }
+select#Category option[value="Student"] { background-image:url(css/AnimatedStudent.jpg); }
+*/
+
+.checkbox{
+  color: #4e3218; 
+}
+
+
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+}
+ul.breadcrumb li {display: inline;}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+}
+ul.breadcrumb li {display: inline;}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.studentTutorFrameSelectPanel{
+  background-image: css\aboutUsBackground.jpg;
+}
+
+
+/*.popupcontent{
+background-color:blue;
+border-style:groove;
+border-color:grey;
+height:300px; 
+width:450px;
+position:absolute;
+top:30%;
+left:30%;
+display:none;
+
+}  */
+
+
+#fullScreenDiv{
+ /* background-image: url("css/subjectback.jpg"); */
+  background-image: url("css/LoginBackground.jpg");
+  
+}
+
+a:link {
+color:red;  
+}
+
+
+ .abcRioButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+  -webkit-user-select: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: none;
+  color: #262626;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  &:hover {
+    -webkit-box-shadow: 0 0 3px 3px rgba(66, 133, 244, .3);
+    box-shadow: 0 0 3px 3px rgba(66, 133, 244, .3);
+  }
+}
+.abcRioButtonRed {
+  border: none;
+  color: #fff;
+  background-color: #dc4e41;
+  &:active {
+    background-color: #c53829;
+  }
+  .abcRioButtonContentWrapper {
+    border: 1px solid transparent;
+  }
+}
+.abcRioButtonBlue {
+  border: none;
+  color: #fff;
+  background-color: #4285f4;
+  &:hover {
+    background-color: #4285f4;
+  }
+  &:active {
+    background-color: #3367d6;
+  }
+  .abcRioButtonIcon {
+    background-color: #fff;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+  }
+  .abcRioButtonContentWrapper {
+    border: 1px solid transparent;
+  }
+}
+.abcRioButtonLightBlue {
+  background-color: #fff;
+  color: #757575;
+  &:active {
+    background-color: #eee;
+    color: #6d6d6d;
+  }
+}
+.abcRioButtonWhite {
+  background-color: #fff;
+  color: #dc4e41;
+  &:active {
+    background-color: #eee;
+  }
+  path {
+    fill: #dc4e41;
+  }
+}
+.abcRioButtonIcon {
+  float: left;
+}
+.abcRioButtonSvg {
+  display: block;
+}
+.abcRioButtonContents {
+  font-family: Roboto, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .21px;
+  margin-left: 6px;
+  margin-right: 6px;
+  vertical-align: top;
+}
+.abcRioButtonContentWrapper {
+  height: 100%;
+  width: 100%;
+}
+.abcRioButtonGreen {
+  .abcRioButtonContentWrapper {
+    border: 1px solid transparent;
+  }
+}
+.abcRioButtonDarkGray {
+  .abcRioButtonContentWrapper {
+    border: 1px solid transparent;
+  }
+}
+.abcRioButtonGrayedOut {
+  .abcRioButtonContentWrapper {
+    border: 1px solid transparent;
+  }
+}
+.abcRioButtonErrorWrapper {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.abcRioButtonWorkingWrapper {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.abcRioButtonErrorIcon {
+  margin-left: auto;
+  margin-right: auto;
+}
+.abcRioButtonWorkingIcon {
+  margin-left: auto;
+  margin-right: auto;
+}
+.abcRioButtonErrorState {
+  border: 1px solid #d5d5d5;
+  border: 1px solid rgba(0, 0, 0, .17);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  color: #262626;
+  background-color: #fff;
+  &:hover {
+    border: 1px solid #aaa;
+    border: 1px solid rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    background-color: #fff;
+  }
+  &:active {
+    border: 1px solid #aaa;
+    border: 1px solid rgba(0, 0, 0, .25);
+    -webkit-box-shadow: inset 0 1px 0 #ddd;
+    box-shadow: inset 0 1px 0 #ddd;
+    color: #262626;
+    background-color: #e5e5e5;
+  }
+  .abcRioButtonErrorWrapper {
+    display: block;
+  }
+  .abcRioButtonContentWrapper {
+    display: none;
+  }
+  .abcRioButtonWorkingWrapper {
+    display: none;
+  }
+}
+.abcRioButtonWorkingState {
+  border: 1px solid #d5d5d5;
+  border: 1px solid rgba(0, 0, 0, .17);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  color: #262626;
+  background-color: #f5f5f5;
+  &:hover {
+    border: 1px solid #aaa;
+    border: 1px solid rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    background-color: #f5f5f5;
+  }
+  &:active {
+    border: 1px solid #aaa;
+    border: 1px solid rgba(0, 0, 0, .25);
+    -webkit-box-shadow: inset 0 1px 0 #ddd;
+    box-shadow: inset 0 1px 0 #ddd;
+    color: #262626;
+    background-color: #e5e5e5;
+  }
+  .abcRioButtonWorkingWrapper {
+    display: block;
+  }
+  .abcRioButtonContentWrapper {
+    display: none;
+  }
+}
+@-webkit-keyframes {
+  abcRioButtonWorkingIconPathSpinKeyframes {
+    0% {
+      -webkit-transform: none;
+    }
+  }
+}
+
+#google {
+  
+  .__sign-in {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+ 
+
+
+body { padding: 2em; }
+
+
+
+/* Shared */
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  /* width: 13em;  - apply for fixed size */
+  margin: 0.2em;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 12px;
+  color: #FFF;
+}
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.loginBtn:focus {
+  outline: none;
+}
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+
+/* Facebook */
+.loginBtn--facebook {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+
+/* Google */
+.loginBtn--google {
+  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+  background: #DD4B39;
+}
+.loginBtn--google:before {
+  border-right: #BB3F30 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+  background: #E74B37;
+}
+
+
+
+
+</style>
+<title>miniSchoolers</title>        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<!--  <script src="email-validation.js"></script> 
+
+<script src="image-picker.js"></script> 
+<script src="image-picker.min.js"></script> -->
+
+<script type="text/javascript">
+  var flag = "";
+  var flagValidUserName= false;
+  var tryFlag=false;
+  var mailFlag= false;
+  /* wokring code but commenting to test functionality  */
+
+  /*function ValidateUserName(username){
+    alert("validating username ");
+    alert(" username is "+username);
+
+    if(username!=""){
+// do nothing 
+}
+else
+{
+  alert("Please Enter a Username");
+}
+
+}  // ending ValidateUserName  
+
+
+
+function ValidateEmail(emailid)
+{
+
+  alert("under ValidateEmail");
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if(emailid.value.match(mailformat))
+  {
+  //alert("Email address is valid.!");
+//document.form.emailOrUsername.focus();
+
+return true;
+}
+else
+{
+  alert("You have entered an invalid email address!");
+//document.formsignup.emailOrUsername.focus();
+return false;
+}
+}
+
+function ValidateProfession(profession)
+{
+  alert("validating profession");
+  alert("profession is "+profession);
+}
+
+
+
+
+function ValidateSignUpCredentials()
+{
+
+  (function () {
+    function ValidateUserName(username){
+      alert("validating username ");
+      alert(" username is "+username);
+
+      if(username!=""){
+// do nothing 
+}
+else
+{
+  alert("Please Enter a Username");
+}
+
+}  // ending ValidateUserName  
+})(); // ending automatic function.
+
+/*
+  alert("i m here to validate all the credentials.");
+  ValidateUserName(username);
+  ValidateEmail(emailid);
+  ValidateProfession(profession);
+
+  *
+}
+*/
+
+//document.getElementsByClassName('abcRioButtonContentWrapper').contentDocument.getElementsByClassName('abcRioButtonContents').style.fontWeight = "bold";
+
+
+
+
+
+function randomString(length)
+{
+    var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var i;
+    var result = "";
+  var isOpera = Object.prototype.toString.call(window.opera) == '[object Opera]';
+    if(window.crypto && window.crypto.getRandomValues)
+    {
+        values = new Uint32Array(length);
+        window.crypto.getRandomValues(values);
+        for(i=0; i<length; i++)
+        {
+            result += charset[values[i] % charset.length];
+        }
+        return result;
+    }
+    else if(isOpera)//Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
+    {
+        for(i=0; i<length; i++)
+        {
+            result += charset[Math.floor(Math.random()*charset.length)];
+        }
+        return result;
+    }
+    else throw new Error("Your browser sucks and can't generate secure random numbers");
+}
+
+
+
+
+function onSignIn(googleUser) {
+
+ // alert("inside onSignIn method ");
+  var profile = googleUser.getBasicProfile();
+  //console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  //console.log('Name: ' + profile.getName());
+  alert("emailid is "+profile.getEmail());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+ // console.log('gender: ' + profile.getGender());
+  //alert(" gmailid is "+profile.getId());   */
+
+  gapi.auth2.getAuthInstance().disconnect().then(function () {
+
+        //Do stuff here after the user has been signed out, you can still authenticate the token with Google on the server side
+
+    //alert("diconnected if already connected.");
+  /*  var profile = googleUser.getBasicProfile();
+   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  console.log('password: ' + profile.getPassword()); */
+ //alert(" gmailid is "+profile.getEmail());  
+
+var googleEmailid=profile.getEmail();
+var googleUserName=profile.getName();
+
+ if (googleEmailid!=null){
+    try{ 
+             //alert("In TRy BLOCK window.location is"+window.location);
+          
+jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/login/getGoogleUserDetailsAlreadySavedBeforeReplace/"+googleEmailid,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                      alert("*** getGoogleUserDetailsAlreadySavedBeforeReplace data is****"+data+"****status is ****"+status);   
+                      if(data=="")
+                      {
+                      
+                      alert("in if clause (null values) for firstTimeuser");  
+jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/register/googleUserDetails/"+googleEmailid+"/"+googleUserName,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                        //alert("*** google data is****"+data+"****status is ****"+status);                        //}
+                         
+                       }
+                        }); // closure for ajax call googleUserDetails
+
+
+                      }   // ending if data==null                  //}
+                    else{
+          alert("i m in else case foralltime user");
+         //  null#&0#Tutor#&0#null#&0#null
+          // PASSWORD,PROFESSION,PHONENO,GENDER 
+          var d1=data.split("#&0#");
+          var googlePassword=d1[0];
+      var googleProfession=d1[1];
+     var googlePhoneNo= d1[2];
+     var googleGender=d1[3];
+  
+          //  alert("googlePassword"+googlePassword);
+          //   alert("googleProfession"+googleProfession);
+           //  alert("googlePhoneNo"+googlePhoneNo);
+            // alert("googleGender"+googleGender);
+                    }
+     
+  
+     jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/register/googleUserDetailsSettingOriginalValues/"+googleEmailid+"/"+googleUserName+"/"+googlePassword+"/"+googleProfession+"/"+googlePhoneNo+"/"+googleGender,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                        //alert("*** google data is****"+data+"****status is ****"+status);                        //}
+                         
+                       }
+
+  }); // closure for ajax call googleUserDetailsSettingOriginalValues
+
+
+                       } // ending success
+
+  }); // closure for ajax call
+
+
+      window.location.replace("http://localhost:8080/portal1/HomePage.html?userName="+googleEmailid); 
+                     
+                    } // ending try 
+                    catch(event) { 
+                          
+                      window.location = "http://localhost:8080/portal1/LoginPage.html"; 
+                     //  alert("Error in login with Google.Pls enter credentials in the fields.");
+                    }
+                  }  // ending if (googleEmailid!=null)
+
+    });   // ending gapi....
+
+}   // ending onSignOn button 
+
+
+
+
+
+
+/* FaceBook API Functions starts from here. */
+
+ // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    console.log("step changecall 7");
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      //testAPI();
+       console.log("step changecall 8");
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+       console.log("step changecall 9");
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+   
+                    if(response.session){
+                      //alert(" we got u ");
+                       console.log("step getLoginStatus 10");
+                        // top.location.href="url to your app home page";
+                    }
+                    else{
+                    //  alert(" we didn't get u");
+                    console.log("step getLoginStatus 11");
+                         top.location.href="https://www.facebook.com/dialog/oauth?client_id=APP_ID&redirect_uri=redirect_url&scope=email,read_stream";
+
+                     }
+        });
+    statusChangeCallback(response);
+    }
+        
+      
+
+ window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '263199760939778',
+            status     : false,
+            cookie     : true,
+            xfbml      : true
+        });
+    };
+
+
+
+ (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+
+
+
+
+$(document).ready(function(){
+
+/*if(window.devicePixelRatio==2){
+ alert("pixelratio 2 tu ta takdi vi nh.");
+
+//$("#LogInDiv").show();
+
+  $("#SignUpDiv").prop("style","top:20%;left:35%;right:25%;bottom:40%;position:fixed;z-index:10; background-color:#FFC300 ;border-style:none;display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image:url(css/paper.png);/background-position: left top;background-repeat: repeat;");
+
+$("#LogInDiv").prop("style","top:20%;left:35%;right:25%;bottom:40%;position:fixed;z-index:10; background-color:red ;border-style:none;display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image:url(css/paper.png);/background-position: left top;background-repeat: repeat;");
+
+}*/
+
+/*var x = document.getElementsByClassName('abcRioButtonContents');
+var y = (x.contentWindow || x.contentDocument);
+if (y.document)y = y.document;
+y.body.style.backgroundColor = "orange";
+*/
+
+
+
+/*var x = document.getElementsByClassName('abcRioButtonContents');
+alert("abcRioButtonContents is "+abcRioButtonContents);
+var y = x.contentDocument;
+y.body.style.backgroundColor = "red";
+
+*/
+
+
+
+
+
+$("#MessagePanel").hide();
+
+
+
+
+
+$('a[href$="forgotPassword"]').click(function(){
+alert("forgot password called ");
+
+
+$("#forgotPasswordDiv").show();
+//alert("showing");
+
+//history.pushState(data,"","http://localhost:8080/portal1/LoginPage.html");
+//alert("pushed");
+//window.location.replace="http://localhost:8080/portal1/LoginPage.html";
+
+
+  $("#SignUpButtonId").click(function() {
+  //alert("sign up button clicked");
+  $("#SignUpDiv").show();
+  $("#LogInDiv").hide();
+  $("#forgotPasswordDiv").hide();
+});
+
+
+  $("#LoginButtonId").click(function() {
+  //alert("sign up button clicked");
+  $("#LogInDiv").show();
+  $("#SignUpDiv").hide();
+  $("#forgotPasswordDiv").hide();
+});
+
+
+});
+
+
+$('#remember').change(function(){
+       //Use $(this), which is the instance of clicked checkbox
+      if ($(this).is(":checked")) { // you can use is(":checked")   
+
+//if ($("#remember").attr('checked')) {
+//alert("remember me checked");
+
+
+var username = $("#userEmailIdLogin").val();
+var password = $("#userPasswordLogin").val();
+
+//alert("username is "+username);
+//alert("password is "+password);
+
+// set cookies to expire in 14 days
+$.cookie('username', username, { expires: 14 });
+$.cookie('password', password, { expires: 14 });
+$.cookie('remember', true, { expires: 14 });
+} else {
+// reset cookies
+//alert(" unchecked");
+
+//Cookies.get("yourCookieName");
+
+$.cookie('username', null);
+$.cookie('password', null);
+$.cookie('remember', null);
+}
+
+});
+
+
+
+var remember = $.cookie('remember');
+if ( remember == 'true' ) {
+var username = $.cookie('username');
+var password = $.cookie('password');
+// autofill the fields
+ //$('#username').attr("value", username);
+ $('#userEmailIdLogin').val(username);
+$('#userPasswordLogin').val(password);
+}
+
+
+
+
+
+   $("#loginBtn").click(function() {
+  //alert("sign up button clicked");
+ document.getElementById('loginBtn').addEventListener('click', function() {
+   //console.log('do the login step 1');
+   /*FB.logout(function(response) {
+   // Person is now logged out
+   alert("logging out for already logged in user");
+     }); */
+   
+
+   // console.log('response outside step 2 '+response);
+    FB.login(function(response) {
+            if (response.authResponse) {
+
+            //  console.log("response.authResponse step 3"+response.authResponse);
+               console.log('Welcome!  Fetching your information.... ');
+               //FB.api('/me', function(response) {
+                 FB.api('/me?fields=id,name,email,gender,permissions', function(response) {
+                 //FB.api('/me?fields=id,name,email,gender,picture,permissions', function(response) {
+                
+                 // console.log(response.name);
+                 // console.log(response.email);
+                  //console.log(' gender '+response.gender);
+              //   alert(" gender "+response.gender);
+               // alert(" picture "+response.picture);
+                // var picture_url = picture.data.url;
+                 // alert("picture_url "+picture_url);
+                // var im = document.getElementById("profileImage").setAttribute("src", "http://graph.facebook.com/" + response.id + "/picture?type=normal");
+                  
+                //  alert("im is "+im);
+
+                   //console.log('Good to see you, ' + response.email + '.');
+                  // alert('Good to see you, ' + response.email + '.');
+               //  console.log("step 4");
+                   var FacebookEmailId=response.email;
+                   var FacebookUName=response.name;
+                   var FacebookUGender=response.gender; 
+
+                   if (FacebookEmailId!=null){
+              try{ 
+
+
+                     // alert("In TRy BLOCK window.location is"+window.location);
+        window.location.replace("http://localhost:8080/portal1/HomePage.html?userName="+FacebookEmailId);
+         tryFlag= true;
+       //  alert(" tryflag is "+tryFlag);
+
+                              }
+                              catch(event) { 
+                                window.location = "http://localhost:8080/portal1/LoginPage.html"; 
+                              //  alert("Error in login with Google.Pls enter credentials in the fields.");
+                              }
+
+
+    (function () {
+       
+       //alert(" calling automatic functions. ");
+
+          
+jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/login/getFacebookUserDetailsAlreadySavedBeforeReplace/"+FacebookEmailId,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                      alert("*** getFacebookUserDetailsAlreadySavedBeforeReplace data is****"+data+"****status is ****"+status);   
+                      if(data=="")
+                      {
+                      
+                      alert("in if clause (null values) for firstTimeuser");  
+jQuery.ajax({
+
+url: "http://localhost:8080/portal1/portal/register/facebookUserDetails/"+FacebookEmailId+"/"+FacebookUName+"/"+FacebookUGender,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                        alert("*** facebbo data is****"+data+"****status is ****"+status);                        //}
+                    
+                       }
+                        }); // closure for ajax call googleUserDetails
+
+
+                      }   // ending if data==null                  //}
+                    else{
+          alert("i m in else case foralltime user");
+         //  null#&0#Tutor#&0#null#&0#null
+          // PASSWORD,PROFESSION,PHONENO,GENDER 
+          var d1=data.split("#&0#");
+          var facebookPassword=d1[0];
+      var facebookProfession=d1[1];
+     var facebookPhoneNo= d1[2];
+     var facebookGender=d1[3];
+  
+           alert("facebookPassword"+facebookPassword);
+           alert("facebookProfession"+facebookProfession);
+             alert("facebookPhoneNo"+facebookPhoneNo);
+             alert("facebookGender"+facebookGender);
+                    }
+     
+  
+     jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/register/facebookUserDetailsSettingOriginalValues/"+FacebookEmailId+"/"+FacebookUName+"/"+facebookPassword+"/"+facebookProfession+"/"+facebookPhoneNo+"/"+facebookGender,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                        //alert("*** google data is****"+data+"****status is ****"+status);                        //}
+                         
+                       }
+
+  }); // closure for ajax call googleUserDetailsSettingOriginalValues
+
+
+                       } // ending success
+
+  }); // closure for ajax call
+
+
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+       
+             jQuery.ajax({
+
+ url:"http://localhost:8080/portal1/portal/register/facebookUserDetails/"+FacebookEmailId+"/"+FacebookUName+"/"+FacebookUGender,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                     // alert("*** facebook data is****"+data+"****status is ****"+status);                        //}
+                         
+                       }
+
+  }); // closure for ajax call
+
+------------------------------------------------------------------------------------------------------------------------------
+ */              })(); // ending automatic function. 
+                          
+
+                            }  //ending if (FacebookEmailId!=null)  clause.
+                  
+               });
+            } else {
+              //console.log("step 5");
+                console.log('User cancelled login or did not fully authorize.');
+            }
+        }, {scope: 'email,public_profile', return_scopes: true});
+}, false);
+
+});
+
+
+
+
+  $("#SignUpButtonId").click(function() {
+  //alert("sign up button clicked");
+  $("#SignUpDiv").show();
+  $("#LogInDiv").hide();
+});
+
+
+  $("#LoginButtonId").click(function() {
+  //alert("sign up button clicked");
+  $("#LogInDiv").show();
+  $("#SignUpDiv").hide();
+});
+
+
+  $("#recoveryButton").click(function(event) {
+  alert("recoveryButton pressed");
+ 
+            
+var recoveryEmailId = $("#userEmailIdRecovery").val();
+
+ if(recoveryEmailId==""){
+           // alert("Please enter emailid before you submit.");
+
+            var $messageDiv = $('#MessagePanel'); // get the reference of the div
+$messageDiv.show().html(' '); 
+$messageDiv.show().html('Please enter emailid before you submit.'); 
+ $('#MessagePanel').css("font-weight", "bold");
+   
+   // $("#MessagePanel").css("background-color", "white");
+                      //  $("#MessagePanel").css("margin-top", "10%");
+                        // $("#MessagePanel").css("margin-right", "20%");
+
+                         if(window.devicePixelRatio==2||window.devicePixelRatio==3||window.devicePixelRatio==2.625||window.devicePixelRatio==3.5||window.devicePixelRatio==2.5||window.devicePixelRatio==4||window.devicePixelRatio==2.4||window.devicePixelRatio==1.5||window.devicePixelRatio==1.8){
+                            
+                           // alert("happy to reach here.");
+                              
+                          $('#MessagePanel').css("font-size", 38 + "px");
+                         }
+                         else{
+                          $('#guestStudentsGroupDiv').css("font-size", 15 + "px");
+                         }
+                         $("#MessagePanel").css("text-align", "center");
+setTimeout(function(){ $messageDiv.hide().html('');}, 3000); 
+
+          }
+  
+
+
+else{
+
+
+ // check if user already registered with us or not ?
+  jQuery.ajax({ url: "http://localhost:8080/portal1/portal/login/ifUserRegistered/"+recoveryEmailId,    
+                      dataType:'text',
+                       async:false,
+                       success: function(data,status) {
+
+                     // user exists then generate new password & send mail.
+                        if(data=="User Exists!!!"){
+                          alert("User Exists!!!");
+                       
+                       
+                          var randomPassword = randomString(8);
+
+//alert("random password is "+randomPassword);
+
+jQuery.ajax({ url: "http://localhost:8080/portal1/portal/login/sendRecoveryPassword/"+recoveryEmailId+"/"+randomPassword,    
+                      dataType:'text',
+                       async:false,
+                       success: function(data,status) {
+
+                        // if mail delivered then only store new password in DB .
+                        if(data=="Mail Delivered"){
+                        //  alert("Mail delivered. pls check your inbox.");
+                           mailFlag=true;
+
+                      
+
+              jQuery.ajax({ url:"http://localhost:8080/portal1/portal/register/updateRecoveryPassword/"+recoveryEmailId+"/"+randomPassword,    
+               dataType:'text',
+               async:false,
+               success: function(data,status) {
+                   alert("password updated.");
+                   // alert(" Data "+data);s
+                        }
+                     }); //ending ajax call .
+
+
+         
+
+
+
+                        }
+                    
+
+
+                      }
+                     }); //ending ajax call .
+
+                        }
+                        else {
+                         // alert("No account found for this emailId. Retry, or Sign up for Minischoolers.");
+                        
+                        
+                        }
+                    
+                      }
+                     }); //ending ajax call .
+
+
+
+if(mailFlag==true){
+  //alert("sending mail message ");
+
+var $messageDiv = $('#MessagePanel'); // get the reference of the div
+$messageDiv.show().html(' '); 
+$messageDiv.show().html('kindly check your inbox. New password were sent to your registered emailid.'); 
+ $('#MessagePanel').css("font-weight", "bold");
+  
+   if(window.devicePixelRatio==2||window.devicePixelRatio==3||window.devicePixelRatio==2.625||window.devicePixelRatio==3.5||window.devicePixelRatio==2.5||window.devicePixelRatio==4||window.devicePixelRatio==2.4||window.devicePixelRatio==1.5||window.devicePixelRatio==1.8){
+                            
+                           // alert("happy to reach here 2.");
+                              
+                          $('#MessagePanel').css("font-size", 38 + "px");
+                         }
+                         else{
+                          $('#guestStudentsGroupDiv').css("font-size", 15 + "px");
+                         }
+                         $("#MessagePanel").css("text-align", "center");
+setTimeout(function(){ $messageDiv.hide().html('');}, 7000); 
+
+
+ event.preventDefault();
+return false;
+}
+else{
+
+  //alert("mailFlag false");
+
+var $messageDiv = $('#MessagePanel'); // get the reference of the div
+                         $messageDiv.show().html(' '); 
+                         $messageDiv.show().html('No account found for this emailId. Retry, or Sign up for Minischoolers.'); 
+ $('#MessagePanel').css("font-weight", "bold");
+   $('#guestStudentsGroupDiv').css("font-size", 15 + "px");
+    if(window.devicePixelRatio==2||window.devicePixelRatio==3||window.devicePixelRatio==2.625||window.devicePixelRatio==3.5||window.devicePixelRatio==2.5||window.devicePixelRatio==4||window.devicePixelRatio==2.4||window.devicePixelRatio==1.5||window.devicePixelRatio==1.8){
+                            
+                          //  alert("happy to reach here 3.");
+                              
+                          $('#MessagePanel').css("font-size", 38 + "px");
+                         }
+                         else{
+                          $('#guestStudentsGroupDiv').css("font-size", 15 + "px");
+                         }
+                         $("#MessagePanel").css("text-align", "center");
+setTimeout(function(){ $messageDiv.hide().html('');}, 4000); 
+
+
+}
+
+
+} // ending else here to validate whether the emailid is blank ? means if(recoveryEmailId==""){
+
+//window.open('mailto:nehakhatri10@gmail.com');
+//window.open('mailto:nehakhatri10@gmail.com?subject=Hi Neha&body=mail from miniSchoolers');
+location.replace("http://localhost:8080/portal1/LoginPage.html#forgotPassword"); 
+
+
+event.preventDefault();
+return false;
+});
+
+
+
+
+/* $("#googleButton").click(function() {
+ alert(" googleButton clicked ");
+(function () {  
+ function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  //alert(" gmailid is "+profile.getId());
+}
+
+//})(); // ending automatic function.
+
+//});
+*/
+
+/*
+$("#LoginButtonId").click(function(){
+$("#MutlipleSubjectSelectionDiv").hide();
+});*/
+/*
+function addDroppedCandidates(){
+ $('#MutlipleSubjectSelectionDiv').show();
+}
+*/
+
+
+function checkForm(form)
+  {
+    if(form-signup.userEmailIdRegistraion.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.userEmailIdRegistraion.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form-signup.userEmailIdRegistraion.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form-signup.userEmailIdRegistraion.focus();
+      return false;
+    }
+}
+
+
+
+function ValidateEmail(emailid)
+{
+
+  //alert("under ValidateEmail");
+  var email=emailid;
+  //alert("email is "+email);
+  //var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+   // if (pattern.test(email))
+//alert(" (pattern.test(email)) is "+ pattern.test(email));
+
+  //if(email.value.match(mailformat))
+     if (pattern.test(email))
+  {
+  //alert("Email address is valid.!");
+//document.form.emailOrUsername.focus();
+
+return true;
+}
+else
+{
+  alert("You have entered an invalid email address!");
+//document.formsignup.emailOrUsername.focus();
+return false;
+}
+};
+
+
+
+$("#userEmailIdRegistraion").focusout(function(){
+
+    if ( $("#userEmailIdRegistraion").val().indexOf(" ") >= 0)
+    {
+       alert("wrong email format , no spaces please");
+    }
+    else{
+   
+  }
+
+  });
+
+  $("#NameOfUser").focusout(function(){
+
+    var name=$("#NameOfUser").val();
+      
+    var ValidateAlphaOnlyName = !/^[a-zA-Z ]*$/g.test(name); // Space Allowed.
+      
+    if(ValidateAlphaOnlyName==false){
+      flagValidUserName= true;
+    // do nothing.
+    }
+    else{
+   alert("Invalid Name!! Please enter alphabets only in username. ");
+  
+       }
+
+      });
+
+/* working code but commenting to check functionality *
+
+
+$("#userPasswordRegistraion").focusout(function(){
+  
+    if ( $("#userPasswordRegistraion").val().indexOf(" ") >= 0)
+    {
+       alert("wrong password format , no spaces please");
+    }
+   else if( $("#userPasswordRegistraion").val()=="")
+               
+  
+ {
+      alert("Error: Password cannot be blank!");
+ }
+ else if( $("#userPasswordRegistraion").val().indexOf() <=8)
+    {
+
+      alert("Password length should be equal to or greater than 8 characters.");
+ }
+    else{
+   
+
+  }
+
+  });  
+  
+*/
+
+// get location 
+/*
+$url = json_decode(file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=/*userapikey*/
+        // you can get your api key form http://ipinfodb.com/
+    /*    ip=".$_SERVER['REMOTE_ADDR']."&format=json"));
+        $country=$url->countryName;  // user country
+        $city=$url->cityName;       // city
+        $region=$url->regionName;   // regoin
+        $latitude=$url->latitude;    //lat and lon
+        $longitude=$url->longitude;
+
+ currentLocation=$_SERVER['REQUEST_URI']
+
+ */
+
+/*
+$("#SignUpButtonId").click(function(){
+     $(".popupcontent").css('display', 'block');
+     $("#SignUpDiv").show();
+  });
+
+$("#loginid").click(function(){
+     $(".popupcontent").css('display', 'block');
+  });
+  */
+
+
+
+/*
+//second method
+ $("#LoadMatches").click(function() {
+
+alert("LoadMatches clicked ");
+var HistoryUrl = document.referrer;
+       // if(currentUrl.indexOf("understanding") > 0 ){
+         alert(" History  url  is  : "+HistoryUrl);
+
+//sweety sweety url  is  : http://localhost:8080/portal1/ProfileLayoutDivPercentage.html?emailOrUsername=gamma%40gamil.com
+
+
+               var HistoryUrlParsed = HistoryUrl.split("?");
+               // alert("currentUrlParsed is: "+currentUrlParsed);
+               var urlWithCredentialsParsed = HistoryUrlParsed[1].split("&");
+               // alert("further parsed on: "+urlWithCredentialsParsed);
+var urlWithCredentialsParsedFurther=urlWithCredentialsParsed[0].split("=");
+ alert("parsed on: "+urlWithCredentialsParsedFurther);
+ var EmailId= urlWithCredentialsParsedFurther[1];
+alert("pretty  EmailId is "+EmailId);
+                
+/*
+alert("Joining multiple options.");
+  var items = [];
+$('#ps-type option:selected').each(function(){ items.push($(this).val()); });
+var ConcatenatedStringOfmultipleSubjectValues = items.join('+');
+   alert("ConcatenatedStringOfmultipleSubjectValues are "+ConcatenatedStringOfmultipleSubjectValues);
+   */
+/*
+   jQuery.ajax({
+       
+                        url: "http://localhost:8080/portal1/portal/login/getTutorsOrStudentsProfileInList/"+EmailId,
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                         async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                        success: function(data,status) {
+                           alert("***data is****"+data+"****status is ****"+status);                        //}
+                          //alert("getTutorsOrStudentsProfileInList executed");
+                        }
+
+  }); // closure for ajax call
+
+});
+
+*/
+
+
+
+
+ /*
+//first
+$("#CreateProfileId").click(function() {
+  //alert("sign up button clicked");
+  $("#MutlipleSubjectSelectionDiv").show();
+
+});
+
+*/
+/*
+
+$("#SignUpButtonId").click(function() {
+  //alert("sign up button clicked");
+  $("#MutlipleSubjectSelectionDiv").hide();
+
+});
+
+*/
+
+
+
+//$("#MutlipleSubjectSelectionDiv").hide();
+
+
+//$("#MutlipleSubjectSelectionDivButtonId").click(function() { 
+  /*
+$("#MutlipleSubjectSelectionDivButtonId").click(function(event) { 
+
+//alert("the url of the page is : "+window.location.href);
+var currentUrl = window.location.href;
+       // if(currentUrl.indexOf("understanding") > 0 ){
+         alert(" sweety sweety url  is  : "+currentUrl);
+
+//sweety sweety url  is  : http://localhost:8080/portal1/ProfileLayoutDivPercentage.html?emailOrUsername=gamma%40gamil.com
+
+
+               var currentUrlParsed = currentUrl.split("?");
+               // alert("currentUrlParsed is: "+currentUrlParsed);
+               var urlWithCredentialsParsed = currentUrlParsed[1].split("&");
+               // alert("further parsed on: "+urlWithCredentialsParsed);
+var urlWithCredentialsParsedFurther=urlWithCredentialsParsed[0].split("=");
+ //alert("parsed on: "+urlWithCredentialsParsedFurther);
+ var EmailId= urlWithCredentialsParsedFurther[1];
+alert("pretty  EmailId is "+EmailId);
+                
+
+alert("Joining multiple options.");
+  var items = [];
+$('#ps-type option:selected').each(function(){ items.push($(this).val()); });
+var ConcatenatedStringOfmultipleSubjectValues = items.join('+');
+   alert("ConcatenatedStringOfmultipleSubjectValues are "+ConcatenatedStringOfmultipleSubjectValues);
+
+
+   jQuery.ajax({
+       
+                        url: "http://localhost:8080/portal1/portal/register/EmailIdRetrivedFromURL/"+EmailId+"/"+ConcatenatedStringOfmultipleSubjectValues,
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                         async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                        success: function(data,status) {
+                           alert("***data is****"+data+"****status is ****"+status);
+                                              //}
+                          alert(" hi neha");
+                          flag = "true";
+                        }
+
+  }); // closure for ajax call
+
+   if(flag=="true"){
+  alert("hello1");
+   $("#LoadMatchedProfileDiv").show();
+   return false;
+   event.preventDefault();
+
+});
+
+
+/*
+$("#LoadMachtes").click(function() {
+ alert("load matches clicked.");
+
+jQuery.ajax({
+       
+                        url: "http://localhost:8080/portal1/portal/login/getTutorsOrStudentsProfileInList/"+EmailId,
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                         async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                        success: function(data,status) {
+                           alert("***data is****"+data+"****status is ****"+status);                        //}
+                         // alert(" hi neha");
+                        }
+
+  }); // closure for ajax call
+
+});
+
+*/
+
+
+
+/*
+  $("#signupid").click(function(){
+     $(".popupcontent").css('display', 'block');
+  });
+
+
+
+$("#SignUpButtonId").click(function() {
+  //alert("sign up button clicked");
+  $("#SignUpDiv").show();
+});
+*/
+
+// tried
+ /*$("#submitbutton").click(function(){
+        alert("The paragraph was clicked.");
+    });
+    */
+
+    $("#SignUpDivButtonId").click(function(event) {
+
+ //alert("SignUpDivButtonId clicked no 1 !");
+
+ var userNameValue=$("#NameOfUser").val();
+ var emailIdValue = $("#userEmailIdRegistraion").val();
+ var passwordValue = $("#userPasswordRegistraion").val();
+ //var genderValue = $("#dropDownGender").val();
+   
+
+var result=ValidateEmail(emailIdValue);
+   //alert("result is "+result);
+
+   if (result== false){
+    // do nothing 
+     $("#SignUpDiv").show();
+     return false;
+     event.preventDefault;
+   }
+   else{
+ 
+    if(userNameValue!="" && passwordValue!="" && flagValidUserName!=false){
+     //  if(userNameValue!="" && genderValue!=0 && passwordValue!="" && flagValidUserName!=false){
+
+ //  alert("inside if ");
+   // alert("userNameValue inside if is "+userNameValue);
+// do nothing 
+
+var userInformation=userNameValue+":"+emailIdValue+":"+passwordValue;
+//alert("userInformation no 3  : "+userInformation); 
+
+
+jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/register/"+userInformation,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                        //alert("***data is****"+data+"****status is ****"+status);                        //}
+                         alert("USER! PLEASE SIGNIN NOW.");
+                       }
+
+  }); // closure for ajax call
+
+
+//alert("signed up.Now please login");
+//$("#SignUpDivImage").show();
+      
+   
+}
+
+else
+{
+
+  alert("Please Enter All Fields Correctly.");
+ flagInvalid=true; 
+ 
+}
+//alert(" waiting for tonight. ");
+
+if(flagInvalid=="true"){
+ $("#SignUpDiv").show();
+ 
+ //alert("waiting here.");
+ 
+  return false;  
+}
+event.preventDefault();
+}// false 
+
+//} // else in userNameValidation
+
+ }); // closure for SignUpDivButtonId click.
+
+
+   $("#LogInDiv").show();
+
+
+  $("#LogInDivButtonId").click(function(event) {
+
+// alert("LogInDivButtonId clicked no 1 !");
+
+
+                 var loginEmailIdValue = $("#userEmailIdLogin").val();
+                var loginPasswordValue = $("#userPasswordLogin").val();
+           
+            // alert(" loginEmailIdValue is "+loginEmailIdValue);  
+              //  alert(" loginPasswordValue is "+loginPasswordValue);  
+        
+      // dassi 
+          if(loginPasswordValue==""){
+            alert("Password can't be left blank.");
+          }
+
+        
+
+
+var userCredentials=loginEmailIdValue+":"+loginPasswordValue;
+//alert("userCredentials no 3  : "+userCredentials); 
+
+
+jQuery.ajax({
+
+  url: "http://localhost:8080/portal1/portal/login/"+userCredentials,
+                        //type:"POST",
+                        //contentType: "text/plain",
+                        dataType: 'text',
+                        async:false,
+                       // data: userInformation, // Fullname+"aparnesh-gaurav"+emailId+"aparnesh-gaurav"+category+"aparnesh-gaurav"+gender+"aparnesh-gaurav"+Password,
+                       success: function(data,status) {
+                         if (data=="authenticated"){
+                          //   alert("***dataw is****"+data+"****status is ****"+status); 
+                         //  alert("Welcome "+loginEmailIdValue);
+                            //location.href = "http://localhost:8080/portal1/ProfileLayoutDivPercentage.html"
+/*
+ if(event.keyCode == 37) { // left
+    try { window.location.replace("http://newsii.abudayah.com/photo/2"); } 
+    catch(e) { window.location = "http://newsii.abudayah.com/photo/2"; }
+  }
+                         //alert("window.location.href  is"+window.location.href);
+  */                       ///not working window.location.href = "ProfileLayoutDivPercentage.html";
+                           //alert("now  indow.location.href  is"+window.location.href);
+                          //  window.location = "//www.aspsnippets.com/";
+                        /*   var parameter = $(this).val();
+    window.location = "http://yoursite.com/page?variable=" + parameter;
+    window.location.replace("/newpage/page.php?id=" + product_id);
+
+    */
+                   //  alert("window.location is"+window.location);
+                   try{ window.location.replace("http://localhost:8080/portal1/HomePage.html?userName="+loginEmailIdValue); 
+                      // alert("In TRy BLOCK window.location is"+window.location);
+                    }
+                    catch(event) { window.location = "http://localhost:8080/portal1/HomePage.html"; }
+
+
+
+                           //running code 1
+
+                            /*
+                            alert("window.location is"+window.location);
+                         try{ window.location.replace("http://localhost:8080/portal1/ProfileLayoutDivPercentage.html"); }
+                          catch(event) { window.location = "http://localhost:8080/portal1/ProfileLayoutDivPercentage.html"; }
+                          */
+                            // running code 1 comment ends 
+
+                           // alert("replaced uri is"+url);
+                         // location.href ="http://localhost:8080/portal1/ProfileLayoutDivPercentage.html";
+
+                         flag = "true";
+                          // window.location.href = "thankyou.php";
+                          // location.href = "http://localhost:8080/portal1/ProfileLayoutDivPercentage.html";
+                        }
+                          //alert("Welcome to miniSchoolers.");
+                          //alert("Give us your basic details now.");
+
+                          //setTimeout(function(){ $("#MutlipleSubjectSelectionDiv").show(); },5000);
+
+                           // $("#MutlipleSubjectSelectionDiv").show();    
+
+
+                         // commenting flag  no 2
+
+
+
+                          // }
+                          
+                         // $('#MutlipleSubjectSelectionDiv').show().delay(100000).fadeOut('slow');
+
+                         // $('#MutlipleSubjectSelectionDiv').show().fadeIn();
+                         /// function addDroppedCandidates();
+                         
+
+                          //$('#BasicDetailsInputPanel').css('display', 'inline');
+                          //  $('#BasicDetailsInputPanel').show();
+
+                         // jQuery.ajaxSetup({async:false});
+
+
+                         else{
+                          //flag ="false";
+                          alert("Entered Wrong credentials.Try again");
+                          // $("#LogInDiv").show();
+                           // $("#MutlipleSubjectSelectionDiv").hide(); 
+                          // location.href ="http://localhost:8080/portal1/ProfileLayoutDivPercentage.html"
+
+                        }
+
+                      }
+
+
+  }); // closure for ajax call
+
+//  commenting event & flag no 3
+if(flag=="true"){
+  //alert("hello1");
+  // $("#MutlipleSubjectSelectionDiv").show();
+  return false;
+   //event.preventDefault();
+   
+ }else{
+//alert("invalid");
+$("#LogInDiv").show();
+ if(window.devicePixelRatio==2||window.devicePixelRatio==3||window.devicePixelRatio==2.625||window.devicePixelRatio==3.5||window.devicePixelRatio==2.5||window.devicePixelRatio==4||window.devicePixelRatio==2.4||window.devicePixelRatio==1.5||window.devicePixelRatio==1.8){
+ //alert("devicePixelRatio is 2........ ");
+ $("#LogInDiv").show();
+
+ 
+ } 
+return false;
+ event.preventDefault();
+}
+
+
+       // $("#MutlipleSubjectSelectionDiv").show();  
+        }); // closure for submit button click.
+
+
+
+      if(window.devicePixelRatio==1||window.devicePixelRatio==2||window.devicePixelRatio==3||window.devicePixelRatio==2.625||window.devicePixelRatio==3.5||window.devicePixelRatio==2.5||window.devicePixelRatio==4||window.devicePixelRatio==2.4||window.devicePixelRatio==1.5||window.devicePixelRatio==1.8){
+ //alert("devicePixelRatio is 2  91.3 ");
+ // enjoy
+
+$("#SignUpDiv").hide();
+$("#forgotPasswordDiv").hide();
+
+if ( (window.matchMedia("(orientation: portrait)").matches) &&  (window. matchMedia("(min-width: 450px)").matches))
+{
+
+alert("if called");
+$("#fullScreenDiv").prop("style","top:0;left:0;right:0;bottom:0;position:fixed;z-index:1;overflow: hidden;");
+
+
+  $("#SignUpDiv").prop("style","top:35%;left:10%;right:10%;bottom:20%;position:absolute;z-index:10; background-color:rgb(105, 105, 105);border-style:none;display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image:url(css/paper.png);/background-position: left top;background-repeat: repeat;");
+
+$("#LogInDiv").prop("style","top:35%;left:10%;right:10%;bottom:20%;position:absolute;z-index:999;border-style:none;background-color:rgb(105, 105, 105);  display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image:url(css/paper.png);/background-position: left top;background-repeat: repeat;");
+
+$("#tagSignIn").prop("style","color:white;font-weight:none;font-size:38px;");
+$("#login").prop("style","background-color:white;top:45%;bottom:5%;");
+ 
+$("#bottomDiv").prop("style","top: 80%; left:20%; right:20%;bottom:0%;font-size:35px;position:absolute;font-weight:bold;");
+
+$(".buttonSignUp").prop("style","top:80%;left:50%;right:70%;font-size:30px;padding:7px 8px; border-radius:10px;display: inline-block;");
+ $("#LoginButtonId").prop("style","top:80%;left:72%;font-size:30px;padding:7px 8px;border-radius:10px;display: inline-block;");
+
+$("#googleFBDiv").prop("style","top:20%;left:30%;right:30%;bottom:70%;position:absolute;z-index:10;background-color:transparent;");
+ 
+ $("#loginBtn").prop("style","top:0%;left:0%;right:0%;bottom:50%;position:absolute;font-size:32px;max-width:400px;width:380px;");
+$(".g-signin2").prop("style","data-width:400px;data-height:60px;data-longtitle:true; data-background-color;red;data-font-size:35;"); 
+ 
+
+ $("#googleLoginButton").prop("style","top:50%;left:0%;right:0%;bottom:0%;position:absolute;font-size:50px;max-width:400px;width:380px;height:60px;max-width:70px;");
+
+ $(".abcRioButtonContents").prop("style","font-size:22px;font-weight:bold;");
+
+$("#guestPageMS").prop("style","top:15%;left:14%;position:absolute;font-size:38px;font-family:Old English Text MT;color:white;");
+$("#guestPageLogo").prop("style","top:10%;left:2%;position:absolute;height:100px;width:100px;hspace:5;");
+
+// logindiv form design
+$("#login").prop("style","top:8%;left:2%;right:2%;bottom:10%;position:absolute;");
+
+$("#formLogin").prop("style","top:15%;left:2%;right:2%;bottom:0%;position:absolute;");
+$("#userEmailIdLogin").prop("style","font-size:33px;");
+$("#userPasswordLogin").prop("style","font-size:33px;");
+$("#forgotAncher").prop("style","font-size:35px;float:right;color:white;");
+
+$("#remember").prop("style","-webkit-transform:scale(2);-ms-transform: scale(2);  -o-transform: scale(2);-moz-transform: scale(2); padding: 10px;float:center;"); 
+  $("#rememberMe").prop("style","font-size:38px;text-align:center;color:white;");
+$("#LogInDivButtonId").prop("style","font-size:35px;");
+
+
+// signupdiv form design
+$("#signup").prop("style","top:8%;left:2%;right:2%;bottom:10%;position:absolute;");
+$("#tagSignUp").prop("style","color:white;font-weight:none;font-size:38px;");
+$("#formSignup").prop("style","top:15%;left:2%;right:2%;bottom:0%;position:absolute;");
+
+
+$("#NameOfUser").prop("style","font-size:33px;");
+$("#userEmailIdRegistraion").prop("style","font-size:33px;");
+$("#userPasswordRegistraion").prop("style","font-size:33px;");
+$("#SignUpDivButtonId").prop("style","font-size:35px;");
+
+
+}
+else{
+
+alert("else called");
+
+$("#guestPageMS").prop("style","top:15%;left:10%;position:absolute;font-size:20px;font-family:Old English Text MT;color:white;");
+$("#guestPageLogo").prop("style","top:2%;left:1%;position:absolute;height:60;width:70;hspace:5;");
+
+
+}
+
+
+  
+  (function () {
+$("#LogInDiv").show();
+//$("#bottomDiv").show();
+})(); 
+
+$('a[href$="forgotPassword"]').click(function(){
+  alert("samsung j8");
+$("#forgotPasswordDiv").show();
+$("#LogInDiv").hide();
+
+
+ $("#forgotPasswordDiv").prop("style","top:35%;left:10%;right:10%;bottom:20%;position:absolute;background-color:#696969;border-radius:25px;");
+ $("#tagRecoverPass").prop("style","top:10%;color:white;font-weight:none;font-size:38px;position:absolute;background-color:#696969;text-align:center;");
+ $("#formRecoveryPass").prop("style","top:25%;left:2%;right:2%;bottom:20%;position:absolute;background-color:#696969;text-align:center;");
+
+
+ $("#userEmailIdRecovery").prop("style","font-size:35px;");
+
+ $("#recoveryButton").prop("style","font-size:38px;");
+
+}); 
+    
+(function (event) {
+
+//alert("nit chaldi ");
+ $("#headerInputPanel").hide();
+ $("#headerInput").show();
+
+return false;  
+event.preventDefault();  
+})(); 
+
+
+//enjoy
+} // end of pixel ratio resonsive handling call
+else if ( (window.matchMedia("(min-width: 450px)").matches) &&  (window. matchMedia("(max-width: 1025px)").matches))
+{
+
+//alert("i dont care .");
+
+$("#fullScreenDiv").prop("style","top:0;left:0;right:0;bottom:0;position:fixed;z-index:1;overflow: hidden;");
+
+
+  $("#SignUpDiv").prop("style","top:35%;left:10%;right:10%;bottom:20%;position:absolute;z-index:10; background-color:rgb(105, 105, 105);border-style:none;display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image:url(css/paper.png);/background-position: left top;background-repeat: repeat;");
+
+$("#LogInDiv").prop("style","top:35%;left:10%;right:10%;bottom:20%;position:absolute;z-index:999;border-style:none;background-color:rgb(105, 105, 105);  display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image:url(css/paper.png);/background-position: left top;background-repeat: repeat;");
+
+$("#tagSignIn").prop("style","color:white;font-weight:none;font-size:38px;");
+$("#login").prop("style","background-color:white;top:45%;bottom:5%;");
+ 
+$("#bottomDiv").prop("style","top: 80%; left:20%; right:20%;bottom:0%;font-size:35px;position:absolute;font-weight:bold;");
+
+$(".buttonSignUp").prop("style","top:80%;left:50%;right:70%;font-size:30px;padding:7px 8px; border-radius:10px;display: inline-block;");
+ $("#LoginButtonId").prop("style","top:80%;left:72%;font-size:30px;padding:7px 8px;border-radius:10px;display: inline-block;");
+
+$("#googleFBDiv").prop("style","top:20%;left:30%;right:30%;bottom:70%;position:absolute;z-index:10;background-color:transparent;");
+ 
+ $("#loginBtn").prop("style","top:0%;left:0%;right:0%;bottom:50%;position:absolute;font-size:32px;max-width:400px;width:380px;");
+$(".g-signin2").prop("style","data-width:400px;data-height:60px;data-longtitle:true; data-background-color;red;data-font-size:35;"); 
+ 
+
+ $("#googleLoginButton").prop("style","top:50%;left:0%;right:0%;bottom:0%;position:absolute;font-size:50px;max-width:400px;width:380px;height:60px;max-width:70px;");
+
+ $(".abcRioButtonContents").prop("style","font-size:22px;font-weight:bold;");
+
+$("#guestPageMS").prop("style","top:15%;left:14%;position:absolute;font-size:38px;font-family:Old English Text MT;color:white;");
+$("#guestPageLogo").prop("style","top:10%;left:2%;position:absolute;height:100px;width:100px;hspace:5;");
+
+// logindiv form design
+$("#login").prop("style","top:8%;left:2%;right:2%;bottom:10%;position:absolute;");
+
+$("#formLogin").prop("style","top:15%;left:2%;right:2%;bottom:0%;position:absolute;");
+$("#userEmailIdLogin").prop("style","font-size:33px;");
+$("#userPasswordLogin").prop("style","font-size:33px;");
+$("#forgotAncher").prop("style","font-size:35px;float:right;color:white;");
+
+$("#remember").prop("style","-webkit-transform:scale(2);-ms-transform: scale(2);  -o-transform: scale(2);-moz-transform: scale(2); padding: 10px;float:center;"); 
+  $("#rememberMe").prop("style","font-size:38px;text-align:center;color:white;");
+$("#LogInDivButtonId").prop("style","font-size:35px;");
+
+
+// signupdiv form design
+$("#signup").prop("style","top:8%;left:2%;right:2%;bottom:10%;position:absolute;");
+$("#tagSignUp").prop("style","color:white;font-weight:none;font-size:38px;");
+$("#formSignup").prop("style","top:15%;left:2%;right:2%;bottom:0%;position:absolute;");
+
+
+$("#NameOfUser").prop("style","font-size:33px;");
+$("#userEmailIdRegistraion").prop("style","font-size:33px;");
+$("#userPasswordRegistraion").prop("style","font-size:33px;");
+$("#SignUpDivButtonId").prop("style","font-size:35px;");
+
+
+
+} 
+else {
+  // do nothing 
+  alert("do nothing clause ");
+}
+
+}); // end of document ready method
+</script>
+</head>
+<body>
+  <!--  KEEP THE HTML CODES HERE-->
+
+  <!-- start of full screen div -->
+  <div id="fullScreenDiv"
+  style="top:0;left:0;right:0;bottom:0;position:fixed;background-color:white;border:none;z-index:1;overflow:hidden;">
+  
+
+<!--<div id="loginScreenDiv" style="top:0%;left:0%;right:0%;bottom:0%;border-style:none;position:absolute;height:100%;width:100%;background-color:pink;border:none;z-index:1;background-image: url("css/whiteback.png");">
+-->
+ <div id="headerInput"
+  style="top: 0%; left: 0%; right: 0%; bottom: 90%; position: fixed; background-color: #696969;/*border-bottom:1px solid black;*/border-radius:none;text-align: left;z-index:3;">
+  <img id="guestPageLogo" src="http://localhost:8080/portal1/css/GrandLogoForMS2.jpg"  height="60" width="60" hspace="5">
+  <span>  <font id="fontMS" size="5" color="black;" ><strong id="guestPageMS" style="font-family:Old English Text MT;color:white;">miniSchoolers</strong></font></span>
+
+
+  <div id="headerInputButtonPanel"
+  style="top: 15%; left: 70%; right: 1%; bottom: 3%; position: absolute; background-color:#696969;border-style:none; border-radius:none;text-align: left;">
+  <button class="buttonSignUp" id="SignUpButtonId" > SignUp </button> 
+  <button class="buttonLogin" id="LoginButtonId" >SignIn </button> 
+</div> <!-- Ending headerInputButtonPanel #10EBF1-->
+</div>  <!-- Ending headerInputPanel -->
+
+
+
+ <div id="MessagePanel"
+  style="top: 12%; left: 0%; right: 0%; bottom: 80%; position: absolute; background-color:#ffff94;border-style:none;border-radius:none;text-align: left;z-index:0;"></div>
+
+
+ 
+
+ <!-- google & facebook div starting-->
+ <div id="googleFBDiv" style="top:20%;left:43%;right:40%;bottom:60%;position:absolute;z-index:10;">
+ 
+
+<button id="loginBtn" onlogin="checkLoginState();" class="loginBtn loginBtn--facebook">Sign in with Facebook</button></br> 
+
+<!--
+<!-- starting google button --
+ <div id="google">
+    <a href="" class="__sign-in"><div class="g-signin2"><div style="height:36px;width:120px;" class="abcRioButton abcRioButtonLightBlue"><div class="abcRioButtonContentWrapper"><div class="abcRioButtonIcon" style="padding:8px"><div style="width:18px;height:18px;" class="abcRioButtonSvgImageWithFallback abcRioButtonIconImage abcRioButtonIconImage18"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g></svg></div></div><span style="font-size:20px;line-height:34px;" class="abcRioButtonContents"></span></div></div><div></div></a></div> &nbsp&nbsp&nbsp&nbsp  
+
+
+<!--
+<div id="google">
+   <button class="g-signin2"  class="__sign-in" data-onsuccess="onSignIn"></button>
+        <div style="height:50px;width:240px;" class="abcRioButton abcRioButtonBlue">
+            <div class="abcRioButtonContentWrapper">
+                <div class="abcRioButtonIcon" style="padding:15px">
+                    <div style="width:18px;height:18px;"
+                         class="abcRioButtonSvgImageWithFallback abcRioButtonIconImage abcRioButtonIconImage18">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px"
+                             height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg">
+                            <g>
+                                <path fill="#EA4335"
+                                      d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                                <path fill="#4285F4"
+                                      d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                                <path fill="#FBBC05"
+                                      d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                                <path fill="#34A853"
+                                      d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                                <path fill="none" d="M0 0h48v48H0z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <span style="font-size:30px;line-height:48px;" class="abcRioButtonContents">
+                    <span id="not_signed_inh2wcm9q59y1b">Sign in with Google</span>
+                    <span id="connectedh2wcm9q59y1b"
+                          style="display:none">Signed in with Google</span>
+                </span>
+            </div>
+        </div>
+   <!-- </a>  --
+</div>
+-->
+
+
+<div><button id="googleLoginButton"  class="g-signin2" data-onsuccess="onSignIn" data-width="170px" data-height="30px" data-longtitle="true" data-background-color="red" data-font-size="22" style="color: #e7663f" ></button> 
+
+</div>
+ <!-- ending google button -->
+
+<!-- starting facebook button -->
+
+<!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" size="xlarge">
+</fb:login-button>   -->
+
+<div id="status">
+</div>
+
+
+<!-- working but still commenting -->
+
+<!--
+<fb:login-button size="large" style="height:30px;width:170px;"><button id="loginBtn" onlogin="checkLoginState();">Facebook Login</button></fb:login-button>
+-->
+
+<!--
+<button id="loginBtn" onlogin="checkLoginState();"><fb:login-button size="large" style="height:30px;width:170px;">Sign in with Facebook </fb:login-button> </button>
+-->
+
+ <!-- ending facebook button -->
+
+ </div> <!-- google & facebook div ending-->
+
+ <!--<button onclick="myFacebookLogin()">Login with Facebook</button> -->
+
+ <!--<div id="fb-root"></div>
+
+<div class="fb-login-button" data-width="60" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+ </div>
+ -->
+ 
+ <!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+
+
+<!--<div style="top:30%;left:20%;right:35%;bottom:60%;position:absolute;z-index:10;background-color:red;" <button id="googleButton" onclick="onSignIn(googleUser);">My</button></div>
+-->
+
+<div id="SignUpDiv" style="top:40%;left:35%;right:35%;bottom:20%; position: absolute;z-index:10; background-color:#696969 ;border-style:none;display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image:url(css/paper.png);*/background-position: left top;background-repeat: repeat;">
+
+                         <font font-family=" Pinyon Script" > 
+                          <strong id=tagSignUp style="color:white;">Please Register</strong></font></span>  
+
+
+
+<div id="signup" >
+  <br><form id=formSignup name='formsignup' >
+
+  <span class="fontawesome-user"></span>
+   <input type="text" name="userName" id="NameOfUser" placeholder="Username" required>
+</br>
+
+<span class="fontawesome-user"></span>
+<br>  <input type="text" name="emailOrUsername" id="userEmailIdRegistraion"  placeholder="EmailId">
+</br>
+
+
+<br>
+<span class="fontawesome-lock"></span>
+<input type="password" id="userPasswordRegistraion" placeholder="Password">
+<!--</br>
+</br>
+<label> Profession  </label>
+<select id="dropDownGender">
+  <option value="0">Profession </option>
+  <option value="1">Tutor</option>
+  <option value="2">Student</option>
+</select> -->
+</br>  
+
+
+
+<br>
+
+<button class="buttonSignUp" id="SignUpDivButtonId" > SignUp </button> </pre>
+<!--onclick="return ValidateSignUpCredentials(this);   onclick="return checkForm(form);""   -->
+</form>
+
+
+<div id="SignUpDivImage"
+style="top:0%;left:0%;right:0%;bottom:0%; position: absolute;z-index:15;  background-color:none;border-style:none;display:none;image-rendering:center;">
+<img src="css\signupimage.jpg" height="200" width="200" >
+
+
+</div>  
+</div>
+
+</div> <!-- end of signup div  -->
+
+
+<!-- starting logindiv -->
+
+<div id="LogInDiv"  style="top:40%;left:35%;right:35%;bottom:20%; position: absolute;z-index:10; background-color:#696969;border-style:none;display:none;text-align: center;border-radius: 25px; padding: 20px;/*background-image: url(css/paper.png);*/
+background-position: left top;
+background-repeat: repeat;">
+<strong id="tagSignIn" style="color: white;">Please SignIn</strong></font></span> 
+
+
+<div id="login" >
+  <form id="formLogin" name='formlogin' > 
+
+
+
+  <span class="fontawesome-user"></span>
+  <br>  <input type="text" name="emailOrUsername" id="userEmailIdLogin" placeholder="EmailId">
+</br>
+
+
+<br>
+<span class="fontawesome-lock"></span>
+<input type="password" id="userPasswordLogin" placeholder="Password">
+</br>
+
+
+ <a id="forgotAncher" href="#forgotPassword" style="color:white;float:right;font-size:13px;">Forgot Password?</a> 
+</br>
+</br>
+
+
+<input type="checkbox" name="remember" id="remember" />
+<label id="rememberMe" for="remember" style="color:white;"> Remember me</label>
+</br>
+</br>
+
+<button class="buttonSignUp" id="LogInDivButtonId"  > SignIn </button> </pre>
+
+</form>
+
+</div>
+
+</div> <!-- end of login div  -->
+
+
+<div id="forgotPasswordDiv"  style="top:40%;left:35%;right:35%;bottom:20%; position: absolute;z-index:10; background-color:#696969;border-style:none;display:none;text-align: center;border-radius: 25px; padding: 20px;background-position: left top;
+background-repeat: repeat;">
+<strong id=tagRecoverPass style="color: white;"> Enter your email address and we'll send you a new Password. </strong></font></span> 
+
+
+<div id="recoverPassDiv" >
+  <form id=formRecoveryPass name='formlogin' > 
+
+
+</br>
+  <span class="fontawesome-user"></span>
+  <br>  <input type="text" name="emailIdRecovery" id="userEmailIdRecovery" placeholder="EmailId">
+</br>
+</br>
+</br>
+
+
+
+<button class="buttonSignUp" id="recoveryButton" style="font-size:12px;" > send recovery email </button> </pre>
+
+
+</form>
+
+</div>
+
+</div> <!-- end of login div  -->
+
+
+
+
+<div id="bottomDiv" style="top: 80%; left:35%; right:35%; bottom:15%;border-style:none;position:fixed;font-size:18px;font-weight:bold;"><!--border-color:teal ;border-radius: 5px;"> -->
+<a href="http://localhost:8080/portal1/AboutUs.html" style="color:#696969;">About us</a>&nbsp&nbsp&nbsp
+<a href="http://localhost:8080/portal1/Policy.html" style="color:#696969;">Policy</a>&nbsp&nbsp&nbsp
+<a href="http://localhost:8080/portal1/ContactUs.html" style="color:#696969;">Contact us</a>
+
+
+</div>
+
+<!--</div> <!-- end of  loginScreenDiv-->
+                            </div> <!-- end of fullScreenDiv -->
+
+                            <!-- Following code is for the pop up div at another z index which will render the contents of the book : -->
+                            <!-- Following code is for the pop up div at another z index which will render the contents of the book : -->
+
+        <!--
+        <div id="bookLayout" style="left:3%;top:3%;width: 95%; height: 95%; position: absolute; background-color: white;border-radius: 25px;z-index:5;display:none;">
+                
+
+                <div id="topDiv" style="left:27%;right:30%;top:2%;bottom:92%;height:3%;width:50%; position: absolute; background-color: white;z-index:5;border-radius: 25px;">
+                                <table align="center">
+                                <tr>
+                                <th><label id="bookTitleWhileRead"> Book name : </label></th>
+                                
+                            </tr>
+                            <tr>
+                                <th><pre><label>TOPIC NUMBER  </label><select id="topicDropDownWhileRead">
+                                                  <option value="1">1</option>
+                                                  <option value="2">2</option>
+                                                  <option value="3">3</option>
+                  
+
+                                                  <option value="4">4</option>
+                                                  <option value="5">5</option></select> <label id="topicFetchedWhileRead"></label>
+                                </pre></th>        
+                            </tr>
+                            </table>
+                        </div>
+        
+                <div id="innerDiv" style="left:7%;right:3%;top:10%;bottom:6%; position: absolute; background-color: white;z-index:5;border-radius: 25px;">
+                <p id="titleId"></p>
+                        
+                        <textarea readonly id="divTextAreaForRead" style="width:90%;left:5%;right:5%;top:5%;bottom:5%;font-size:16px;z-index:5;font-family:Pinyon Script;position: absolute;outline:none; border: 1.8px solid black" class="notes">
+
+                                
+                        </textarea>
+                </div>
+
+                <div id="bottomDiv" style="left:33%;right:28%;top:92%;bottom:2.5%; position: absolute; background-color: white;z-index:5;border-radius: 25px;">
+                        <table align="center">
+                        <tr>
+                        <th><button class="buttonCloseBook" id="closeButton">   Close  </button></th>
+                    </tr>
+                    </table>
+                </div>
+                
+
+        </div>
+                
+
+      -->     
+
+
+
+
+
+
+
+
+
+    </body>
+    </html>

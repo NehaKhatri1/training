@@ -1,0 +1,33 @@
+
+Add a column in a existing table:-
+ALTER TABLE USER_REGISTRATION 
+  ADD PHONENO INTEGER(12);
+
+1.Drop a Column:-
+ALTER TABLE "table_name" DROP "column_name";
+
+
+UPDATE USER_REGISTRATION SET PHONENO =12344 and USERNAME ='bejnath' WHERE EmailId ='b1@b1.com';
+
+
+
+Truncate/ To delete records from tables:-
+
+1. DELETE FROM table_name
+WHERE condition;
+
+
+Delete a Table:-
+drop table InvitationTable;
+
+
+
+DUMMY TABLE TO BE CREATED ON PRODUCTION FOR TESTING 
+
+CREATE TABLE Dummy (abc VARCHAR(500) ,xyz VARCHAR(10000));
+
+insert into Dummy values('a@a.com','Tutor');
+insert into Dummy values('bucher','pupil');
+insert into Dummy values('chair','Tutor');
+insert into Dummy values('hanji','nurse');
+insert into Dummy values('shocker','fukery');

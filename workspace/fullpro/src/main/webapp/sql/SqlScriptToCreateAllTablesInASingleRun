@@ -1,0 +1,130 @@
+
+Note:-This script runs well for Production RDS(i.e. MySql )
+DDL:-
+
+CREATE TABLE USER_REGISTRATION (
+    EMAILID varchar(50) NOT NULL,
+    PASSWORD varchar(50),
+    PROFESSION varchar(10),
+    PRIMARY KEY (EMAILID)
+);        
+
+ALTER TABLE USER_REGISTRATION ADD USERNAME VARCHAR(50);
+ALTER TABLE USER_REGISTRATION ADD PHONENO VARCHAR(10);
+ALTER TABLE USER_REGISTRATION ADD GENDER VARCHAR(8);
+
+
+
+CREATE TABLE LOCATIONTABLEWITHOUTPRIMARYKEY (
+    EMAIID VARCHAR(50) NOT NULL,
+    CITY VARCHAR(50),
+    STATE VARCHAR(50),
+    PICURLDATA VARCHAR(20000000),
+    COUNTRY VARCHAR(50),
+    ADDRESS VARCHAR(500),
+    PRIMARY KEY (EMAIID)
+);   
+
+
+
+
+
+CREATE TABLE COURSETABLE (
+    EMAIID VARCHAR(50) NOT NULL,
+    SUBJECTS VARCHAR(2000),
+    PRIMARY KEY (EMAIID)
+);     
+
+
+
+  CREATE TABLE INVITATIONTABLE (
+    RECIPIENTEMAILID varchar(50) NOT NULL,
+    SENDEREMAILID varchar(50) NOT NULL,
+    SenderImage VARCHAR(20000000),
+    SenderName varchar(50),
+    SenderSubjects varchar(2000),
+    CONSTRAINT PK_INVITATIONTABLE  PRIMARY KEY (RECIPIENTEMAILID,SENDEREMAILID)
+);
+
+
+ALTER TABLE INVITATIONTABLE ADD HANDSHAKEFLAG VARCHAR(3);
+
+
+
+CREATE TABLE USER_ATTRIBUTE (
+    EMAILID varchar(50) NOT NULL,
+    TITLE varchar(1000),
+    STRATEGY varchar(2500), 
+    BACKGROUND varchar(2500),
+    PRIMARY KEY (EMAILID)
+); 
+
+ALTER TABLE USER_ATTRIBUTE ADD RATES VARCHAR(500);
+
+
+
+
+
+deprecated:-
+//CREATE TABLE COURSETABLE (EMAIID VARCHAR(500) ,COURSE VARCHAR(500),FIELD VARCHAR(500));
+//CREATE TABLE  INVITATIONTABLE (RECIPIENTEMAILID varchar(250),SENDEREMAILID varchar(250) ,SenderImage VARCHAR(20000000), SenderName varchar(250),SenderCourse varchar(250),SenderField varchar(250));
+	
+	
+	
+CREATE TABLE LOCATIONTABLEWITHOUTPRIMARYKEY (
+    EMAIID VARCHAR(50) NOT NULL,
+    CITY VARCHAR(50),
+    DISTRICT VARCHAR(50),
+    STATE VARCHAR(50),
+   LOCALITY VARCHAR(50),
+    PRIMARY KEY (EMAIID)
+);   
+
+   
+ALTER TABLE LOCATIONTABLEWITHOUTPRIMARYKEY ADD PICURLDATA VARCHAR(20000000);
+
+
+
+
+DML:-
+
+insert into USER_REGISTRATION values('a@a.com','a','Tutor','amar','null','null');
+insert into USER_REGISTRATION  values('b@b.com','b','Tutor','bob','null','null');
+insert into USER_REGISTRATION  values('x@x.com','x','Student','xylam','null','null');
+insert into USER_REGISTRATION  values('y@y.com','y','Student','yarab','null','null');
+insert into USER_REGISTRATION  values('z1@z1.com','z','Student','zebra1','null','null');
+insert into USER_REGISTRATION  values('z@z.com','z1','Student','zeenga','null','null');
+
+insert into LOCATIONTABLEWITHOUTPRIMARYKEY values('a@a.com','Ajmer','null','Rajasthan','PanchsheelNagar','null');
+insert into LOCATIONTABLEWITHOUTPRIMARYKEY values('b@b.com','Ajmer','null','Rajasthan','PanchsheelNagar','null');
+insert into LOCATIONTABLEWITHOUTPRIMARYKEY values('x@x.com','Ajmer','null','Rajasthan','diggibazar','null');
+insert into LOCATIONTABLEWITHOUTPRIMARYKEY values('y@y.com','Ajmer','null','Rajasthan','GolfCourseRoad','null');
+insert into LOCATIONTABLEWITHOUTPRIMARYKEY values('z@z.com','Kishangarh','Ajmer district','Rajasthan','IndiaMotorCircle','null');
+insert into LOCATIONTABLEWITHOUTPRIMARYKEY values('z1@z1.com','Alwar','null','Rajasthan','alwarGate','null');
+
+insert into COURSETABLE values('a@a.com','B.Tech.','AUTOMOBILE ENGINEERING');
+insert into COURSETABLE values('b@b.com','B.Tech.','AUTOMOBILE ENGINEERING');
+insert into COURSETABLE values('x@x.com','B.Tech.','AUTOMOBILE ENGINEERING');
+insert into COURSETABLE values('y@y.com','B.Tech.','AUTOMOBILE ENGINEERING');
+insert into COURSETABLE values('z1@z1.com','B.Tech.','AUTOMOBILE ENGINEERING');
+insert into COURSETABLE values('z@z.com','B.Sc.','Computer Science');
+
+
+insert into COURSETABLE values('a@a.com','java,hadoop,php,basic,');
+insert into COURSETABLE values('b@b.com','java,lisa,hadoop,basic,');
+insert into COURSETABLE values('x@x.com','java,hadoop,php,basic,');
+insert into COURSETABLE values('y@y.com','B.Tech.','AUTOMOBILE ENGINEERING');
+insert into COURSETABLE values('z1@z1.com','B.Tech.','AUTOMOBILE ENGINEERING');
+insert into COURSETABLE values('z@z.com','B.Sc.','Computer Science');
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!--<link rel="shortcut icon" type="image/x-icon" href="faviconboard.ico" />  -->
+  <!-- <link rel="icon" type="image/x-icon" href="css/faviconMS.ico">  -->
+  <!--<link rel="icon" type="image/png" href="css/favicon-32x32.png"/> -->
+  <!-- looking good but small-->
+<!--  <link rel="icon" type="image/png" href="css/favicon-32x32.png"/>
+  -->
+  <link rel="icon" type="image/png" href="css/favicon-32x32.png"/> 
+
+  
+  <!--<link rel="stylesheet" type="text/css" href="css/image-picker.css" />
+  <!--<link rel="stylesheet" type="text/css" href="css/form-style.css" />  -->
+
+
+  <!--  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pinyon+Script" /> -->
+  <style>
+    
+#fullScreenDiv{
+  background-image: url("css/aboutUsBackground.png");
+}
+
+
+</style>
+<title>miniSchoolers</title>        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+  var flag = "";
+  var flagValidUserName= false;
+
+  
+
+
+
+$(document).ready(function(){
+
+$("#fullScreenDiv").show();
+$("#ContentDiv").show();
+
+if(window.devicePixelRatio==2){
+ //alert("devicePixelRatio is 2");
+ $("#ContentDiv").prop("style","top:1%;left:55%;right:2%;bottom:70%;border-style:none;position:fixed;font-size:50px;font-weight:bold;");
+
+  $("#ContentFontId").prop("style","font-size:40px;color:black;");
+} // end of pixel ratio resonsive handling call
+
+
+}); // end of document ready method
+</script>
+</head>
+<body>
+
+<div id="fullScreenDiv"
+  style="top:0;left:0;width: 100%; height: 100%; position: absolute;z-index:1;background-color:#dce1df;border-style:none">
+ 
+
+<div id="ContentDiv" style="top:25%;left:36%;right:25%;bottom:20%;border-style:none;position: fixed;">
+
+<font id="ContentFontId" size="4" color="black" font-family="Pinyon Script" ><strong>
+<p>We do not share personal information with third-parties nor do we store information we collect about your visit to this blog for use other than to analyze content performance through the use of cookies, which you can turn off at anytime by modifying your Internet browser's settings. 
+Terms of usage : This privacy policy is subject to change without notice. Also nothing illegal should be carried out by an user using minischoolers right from copy rights violation , threatening someone , any act of hate spreading , porn , any act that endangers a single human life to abosolutely anything illegal . </p>
+</strong></font></span>
+  
+</div>
+
+
+ </div> <!-- end of fullScreenDiv -->
+
+    </body>
+    </html>

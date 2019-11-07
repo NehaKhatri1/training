@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		div.gallery {
+			border: 1px solid #ccc;
+		}
+
+		div.gallery:hover {
+			border: 1px solid #777;
+		}
+
+		div.gallery img {
+			width: 100%;
+			height: auto;
+		}
+
+		div.desc {
+			padding: 15px;
+			text-align: center;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.responsive {
+			padding: 0 6px;
+			float: left;
+			width: 50.99999%;
+		}
+
+		@media only screen and (max-width: 700px){
+			.responsive {
+				width: 49.99999%;
+				margin: 6px 0;
+			}
+		}
+
+		@media only screen and (max-width: 500px){
+			.responsive {
+				width: 100%;
+			}
+		}
+
+		.clearfix:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript">
+
+function someFunction(abc,obj) {
+				alert(abc);
+      //alert($(obj).attr('class'));
+
+  }
+		$(document).ready(function(){
+
+
+			
+
+		/*	$("#SignUpButtonId").click(function(){
+
+				alert("submit button clicked");
+				var dropDownStandardValue=$("#radiobutton").val(); 
+				alert("value is  "+dropDownStandardValue);
+
+			});
+
+			*/
+/*
+$("#radiobutton1,#radiobutton2").change(function () {
+	//var formValid = false;
+                        if ($("#radiobutton1").attr("unchecked")) {
+                            //$('#r1edit:input').removeAttr('disabled');
+                             alert(" i m  in if ");
+                            var first=$('#radiobutton1').val();
+                            alert("first is "+first);
+                        }
+                        else if ($("#radiobutton2").attr("checked")) {
+                           // $('#r1edit:input').attr('disabled', true);
+                         alert("I am in else");
+                         var second=$('#radiobutton2').val();
+                            alert("second is "+second);
+                        }
+                    });
+                    */
+
+/*
+                   $(".rg").change(function () {
+                     
+if ($("#r1 ").attr("checked")) {
+            var ab= $('#r1:input').val();
+            alert("ab is"+ab);
+           // return ab;
+            
+        }
+        else if ($("#r2").attr("checked")) {
+           var xy= $('#r2:input').val();
+            alert("xy is "+xy);
+         //   return xy;
+        }
+        
+                    });
+
+
+
+
+function myFunction() {
+    var x = document.getElementById("radiobutton").value;
+    alert("x is"+x);
+    x.checked = true;
+
+    // var x = document.getElementById("radiobutton").innerHTML =$("#radiobutton").val();
+    // alert("x is"+x);
+}
+ //document.getElementById("red").checked = true;
+ */
+
+
+});  //document.ready closed here.
+</script>
+</head>
+<body>
+
+
+	
+
+	<div class="responsive">
+
+		<div class="responsive">
+
+			<div class="gallery">
+				<a target="_blank" href="AnimatedTeacher.gif">
+					<img src="C:\Users\Neha\Downloads\apache-tomcat-7.0.75\webapps\portal1\css\AnimatedTeacher.gif" onclick="someFunction('Teacher',this)" alt="Tutor" width="500" height="400">
+				</a>
+				<div class="desc" style="text-align:center";>Teacher</div>
+				<!--<input type="checkbox" name="tutor" value="Tutor" unchecked="checked">Tutor<br>  -->
+				<!--<input type="radio" id="radiobutton1" name="profession" value="Tutor" checked="unchecked">Tutor<br>
+				<input id='r1' type='radio' class='rg' name="asdf" value="tutor"/>-->
+
+			</div>
+		</div>
+
+
+
+		<div class="responsive">
+			<div class="gallery">
+				<a target="_blank" href="AnimatedStudentSmiley.gif" width="500" height="400">
+					<img src="C:\Users\Neha\Downloads\apache-tomcat-7.0.75\webapps\portal1\css\AnimatedStudentSmiley.gif"
+					onclick="someFunction('Student',this)" alt="Student" width="600" height="400">
+				</a>
+				<div class="desc" style="text-align:center";>Student</div>
+				<!-- <input type="checkbox" name="student" value="Student" unchecked="checked">Student<br>  -->
+				<!--<input type="radio" id="radiobutton2" name="profession" value="Student" checked="checked">Student<br> 
+				<input id='r2' type='radio' class='rg' name="asdf" value="student"/> -->
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

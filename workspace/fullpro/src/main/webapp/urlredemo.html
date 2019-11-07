@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+
+ <link rel="icon" type="image/png" href="css/favicon-32x32.png"/>
+
+ <link rel="icon" type="image/png" href="css/favicon-32x32.png"/> 
+
+ <style>
+
+/*#fullScreenDiv{
+  background-image: url("css/aboutUsBackground.png");
+} */
+
+table {
+ width: 100%; max-width: 850px;
+
+ margin:auto;
+ text-align: center;
+ font-family: arial;
+ background-color: black;
+
+}
+
+tr{
+ border: 3px solid white;
+ width: 100%; max-width: 850px;
+/* max-width: 1500px;
+    width: 200px;  */
+    height: 100px;
+    background-color: black;
+}
+
+/*td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+
+  }*/
+
+  td, th {
+    /* border: 1px solid green; border: 1px solid #000;*/
+   
+    text-align: center;
+    padding: 25px;
+    
+    margin: 10px;
+    background-color: black;
+    color: white;
+    word-wrap:break-all;
+
+  }
+
+</style>
+<title>miniSchoolers</title>        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+  var flag = "";
+  var flagValidUserName= false;
+
+  
+
+
+
+  $(document).ready(function(){
+
+    $("#fullScreenDiv").show();
+     $("#ContentDiv").show();
+
+    var currentUrl = window.location.href;
+var n=currentUrl.indexOf("profile");
+ alert("n is "+n);
+ if(currentUrl.indexOf("profile") > 0 ){
+
+  alert("In if");
+ //   var currentUrl = window.location.href;
+    var currentUrlParsed = currentUrl.split("?");
+            alert("currentUrlParsed is: "+currentUrlParsed);
+               var urlWithCredentialsParsed = currentUrlParsed[1].split("="); 
+
+               var EmailId= urlWithCredentialsParsed[1];
+
+               var EmailIdSpillted = EmailId.split("@");
+               var username=EmailIdSpillted[0];
+
+               (function () {
+
+                 alert("EmailId is "+EmailId);
+
+                 jQuery.ajax({
+                  url: "http://localhost:8080/portal1/portal/login/getUserProfileDataForGuestUsers/"+EmailId,      
+                        //contentType: "text/plain",
+                        dataType:'text', 
+                        async:false,
+                        success: function(data,status) {
+                        //  alert("bus ek pal");
+                          /*a@a.com,Ajmer,null,Rajasthan,ValoreNagar,B.Tech.,AUTOMOBILE ENGINEERING, */
+                          alert(data+"****status is ****"+status);
+                     // demo     alert("data received.");
+                      
+
+                        // flagForOkButton3="true";
+
+                        var splitedataByComma=data.split("$_52_$");
+                     // demo     alert("splitedataByComma is"+splitedataByComma);
+                       var userPic=splitedataByComma[0];
+                       var userName=splitedataByComma[1];
+                     var EmailId=splitedataByComma[2];
+                     var city=splitedataByComma[3];
+                     var district=splitedataByComma[4];
+                    //  a@a.com,Ajmer,null,Rajasthan,ValoreNagar,B.Tech.,AUTOMOBILE ENGINEERING,
+                     // getTutorsOrStudentsProfileInList/"+EmailId+"/"+course+"/"+field+"/"+state+"/"+city+"/"+district,
+                     var state =splitedataByComma[5];
+                     var locality=splitedataByComma[6];
+                     var commaSepratedListOfSubjects=splitedataByComma[7];           
+
+            // alert("EmailId "+EmailId);
+           //    alert("city "+city);
+             //    alert("district "+district);
+               //  alert("state "+state);
+                 // alert("locality "+locality);
+
+        
+                     
+      //  alert("commaSepratedListOfSubjects is "+commaSepratedListOfSubjects);
+        var data1=EmailId+"  "+city+"  "+commaSepratedListOfSubjects;
+         document.getElementById('ContentDiv').innerHTML=data1;
+
+          var profiletable = document.createElement('table');
+          var tr = document.createElement('tr');   
+           var td0_pic = document.createElement("IMG");
+
+if(userPic=='null'){
+ // alert("userPic is null");
+
+ td0_pic.setAttribute('src','css/DefaultUserImage.png');
+ td0_pic.setAttribute('width','180px;');
+ td0_pic.setAttribute('height','180px;');
+}
+else{
+  //alert("userPic is not null");
+
+  td0_pic.setAttribute('src',userPic);
+  td0_pic.setAttribute('width','180px;');
+  td0_pic.setAttribute('height','180px;');
+ //td0_pic.setAttribute("style","border-color:blue");
+ td0_pic.setAttribute("style","overflow: hidden");
+}
+
+
+ var td1 = document.createElement('td');
+
+/* var text0 = document.createTextNode("");
+ td1.appendChild(text0);//.appendChild(text1);
+ var br = document.createElement('br');
+ td1.appendChild(br); */
+
+
+ var text1 = document.createTextNode(userName);
+ td1.appendChild(text1);//.appendChild(text1);
+ var br = document.createElement('br');
+ td1.appendChild(br);
+
+ var text2 = document.createTextNode(EmailId);
+td1.appendChild(text2);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text3 = document.createTextNode(city);
+td1.appendChild(text3);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text4 = document.createTextNode(district);
+td1.appendChild(text4);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text5 = document.createTextNode(state);
+td1.appendChild(text5);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text6 = document.createTextNode(locality);
+td1.appendChild(text6);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+
+var input = document.createElement("textarea");
+var text7 = document.createTextNode(commaSepratedListOfSubjects);
+input.setAttribute("style","background-color:black;text-align:center;align:center;");
+input.setAttribute("id", "textAreaAll1");
+input.setAttribute('class','textArea1');
+input.readOnly="true";
+input.cols = "24";
+input.rows = "2";
+input.appendChild(text7); //appendChild
+td1.appendChild(input); 
+var br = document.createElement('br');
+td1.appendChild(br);
+
+ /*var td2 = document.createElement('td');
+ var td3 = document.createElement('td');
+ var td4 = document.createElement('td');
+ var td5 = document.createElement('td');
+ var td6 = document.createElement('td');
+ var td7 = document.createElement('td');  
+
+//var text1 = document.createTextNode(userName);
+var text2 = document.createTextNode(EmailId);
+var text3 = document.createTextNode(city);
+var text4 = document.createTextNode(district);
+var text5 = document.createTextNode(state);
+var text6 = document.createTextNode(locality);
+var text7 = document.createTextNode(commaSepratedListOfSubjects);   */
+
+
+var userProfilePic= document.createTextNode("");
+
+td0_pic.appendChild(userProfilePic);
+/*td1.appendChild(text1);
+td2.appendChild(text2);
+td3.appendChild(text3);
+td4.appendChild(text4);
+td5.appendChild(text5);
+td6.appendChild(text6);
+td7.appendChild(text7); */
+
+tr.appendChild(td0_pic);
+tr.appendChild(td1);
+/*tr.appendChild(td2);
+tr.appendChild(td3);
+tr.appendChild(td4);
+tr.appendChild(td5);
+tr.appendChild(td6);
+tr.appendChild(td7); */
+
+profiletable.appendChild(tr);
+document.body.appendChild(profiletable);
+
+$(profiletable).appendTo('#ContentDiv');
+
+//history.pushState(data,"title","http://localhost:8080/portal1/profile/tutor/"+city+"/"+EmailId+"/"+commaSepratedListOfSubjects);
+
+
+      } 
+       }); //ending ajax call .
+   })(); // ending automatic function.  
+
+} // if clause ended .
+else{
+  alert("I m in else");
+
+      var currentUrlParsed = currentUrl.split("?");
+               // alert("currentUrlParsed is: "+currentUrlParsed);
+               var urlWithCredentialsParsed = currentUrlParsed[1].split("="); 
+
+               var EmailId= urlWithCredentialsParsed[1];
+
+               var EmailIdSpillted = EmailId.split("@");
+               var username=EmailIdSpillted[0];
+
+               (function () {
+
+                 alert("EmailId is "+EmailId);
+
+                 jQuery.ajax({
+                  url: "http://localhost:8080/portal1/portal/login/getUserProfileDataForGuestUsers/"+EmailId,      
+                        //contentType: "text/plain",
+                        dataType:'text', 
+                        async:false,
+                        success: function(data,status) {
+                        //  alert("bus ek pal");
+                          /*a@a.com,Ajmer,null,Rajasthan,ValoreNagar,B.Tech.,AUTOMOBILE ENGINEERING, */
+                          alert(data+"****status is ****"+status);
+                     // demo     alert("data received.");
+                      
+
+                        // flagForOkButton3="true";
+
+                        var splitedataByComma=data.split("$_52_$");
+                     // demo     alert("splitedataByComma is"+splitedataByComma);
+                       var userPic=splitedataByComma[0];
+                       var userName=splitedataByComma[1];
+                     var EmailId=splitedataByComma[2];
+                     var city=splitedataByComma[3];
+                     var district=splitedataByComma[4];
+                    //  a@a.com,Ajmer,null,Rajasthan,ValoreNagar,B.Tech.,AUTOMOBILE ENGINEERING,
+                     // getTutorsOrStudentsProfileInList/"+EmailId+"/"+course+"/"+field+"/"+state+"/"+city+"/"+district,
+                     var state =splitedataByComma[5];
+                     var locality=splitedataByComma[6];
+                     var commaSepratedListOfSubjects=splitedataByComma[7];           
+
+            // alert("EmailId "+EmailId);
+           //    alert("city "+city);
+             //    alert("district "+district);
+               //  alert("state "+state);
+                 // alert("locality "+locality);
+
+        
+                     
+      //  alert("commaSepratedListOfSubjects is "+commaSepratedListOfSubjects);
+        var data1=EmailId+"  "+city+"  "+commaSepratedListOfSubjects;
+         document.getElementById('ContentDiv').innerHTML=data1;
+
+          var profiletable = document.createElement('table');
+          var tr = document.createElement('tr');   
+           var td0_pic = document.createElement("IMG");
+
+if(userPic=='null'){
+ // alert("userPic is null");
+
+ td0_pic.setAttribute('src','css/DefaultUserImage.png');
+ td0_pic.setAttribute('width','180px;');
+ td0_pic.setAttribute('height','180px;');
+}
+else{
+  //alert("userPic is not null");
+
+  td0_pic.setAttribute('src',userPic);
+  td0_pic.setAttribute('width','180px;');
+  td0_pic.setAttribute('height','180px;');
+ //td0_pic.setAttribute("style","border-color:blue");
+ td0_pic.setAttribute("style","overflow: hidden");
+}
+
+
+ var td1 = document.createElement('td');
+
+/* var text0 = document.createTextNode("");
+ td1.appendChild(text0);//.appendChild(text1);
+ var br = document.createElement('br');
+ td1.appendChild(br); */
+
+
+ var text1 = document.createTextNode(userName);
+ td1.appendChild(text1);//.appendChild(text1);
+ var br = document.createElement('br');
+ td1.appendChild(br);
+
+ var text2 = document.createTextNode(EmailId);
+td1.appendChild(text2);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text3 = document.createTextNode(city);
+td1.appendChild(text3);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text4 = document.createTextNode(district);
+td1.appendChild(text4);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text5 = document.createTextNode(state);
+td1.appendChild(text5);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+var text6 = document.createTextNode(locality);
+td1.appendChild(text6);
+var br = document.createElement('br');
+td1.appendChild(br);
+
+
+var input = document.createElement("textarea");
+var text7 = document.createTextNode(commaSepratedListOfSubjects);
+input.setAttribute("style","background-color:black;text-align:center;align:center;");
+input.setAttribute("id", "textAreaAll1");
+input.setAttribute('class','textArea1');
+input.readOnly="true";
+input.cols = "24";
+input.rows = "2";
+input.appendChild(text7); //appendChild
+td1.appendChild(input); 
+var br = document.createElement('br');
+td1.appendChild(br);
+
+ /*var td2 = document.createElement('td');
+ var td3 = document.createElement('td');
+ var td4 = document.createElement('td');
+ var td5 = document.createElement('td');
+ var td6 = document.createElement('td');
+ var td7 = document.createElement('td');  
+
+//var text1 = document.createTextNode(userName);
+var text2 = document.createTextNode(EmailId);
+var text3 = document.createTextNode(city);
+var text4 = document.createTextNode(district);
+var text5 = document.createTextNode(state);
+var text6 = document.createTextNode(locality);
+var text7 = document.createTextNode(commaSepratedListOfSubjects);   */
+
+
+var userProfilePic= document.createTextNode("");
+
+td0_pic.appendChild(userProfilePic);
+/*td1.appendChild(text1);
+td2.appendChild(text2);
+td3.appendChild(text3);
+td4.appendChild(text4);
+td5.appendChild(text5);
+td6.appendChild(text6);
+td7.appendChild(text7); */
+
+tr.appendChild(td0_pic);
+tr.appendChild(td1);
+/*tr.appendChild(td2);
+tr.appendChild(td3);
+tr.appendChild(td4);
+tr.appendChild(td5);
+tr.appendChild(td6);
+tr.appendChild(td7); */
+
+profiletable.appendChild(tr);
+document.body.appendChild(profiletable);
+
+$(profiletable).appendTo('#ContentDiv');
+
+
+  
+ } 
+       }); //ending ajax call .
+   })(); // ending automatic function.  
+
+} // ending else 
+
+//history.pushState(data,"title","http://localhost:8080/portal1/profile/tutor/"+city+"/"+EmailId+"/"+commaSepratedListOfSubjects);
+
+history.pushState(data,"title","http://localhost:8080/portal1/profile/"+city+"/"+EmailId+"/"+commaSepratedListOfSubjects);
+
+
+/*else{
+  alert("silli mistake ");
+}
+*/
+}); // end of document ready method 
+</script>
+</head>
+<body>
+
+
+  <div id="fullScreenDiv"
+  style="top:0;left:0;width: 100%; height: 100%; position: absolute;z-index:1;background-color:white;border-style:none">
+
+
+
+  <div id="ContentDiv" style="top:20%;left:20%;right:20%;bottom:40%;border-style:none;position:fixed;background-color:#FFC300;border:1 px solid;">
+    
+
+  </div>
+
+</div> <!-- end of fullScreenDiv -->
+
+</body>
+</html>
